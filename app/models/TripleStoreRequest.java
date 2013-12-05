@@ -20,7 +20,11 @@ public class TripleStoreRequest
 	
     public TripleStoreRequest()
     {
-        // Make a TDB-back Jena model in the named directory.
+    	
+    }
+    
+    public void create(){
+    	// Make a TDB-back Jena model in the named directory.
         Dataset ds = TDBFactory.createDataset(directory) ;
         Model reg = ds.getNamedModel( "gazeetter" ); 
         FileManager.get().readModel( reg, rdf_file_3);
@@ -38,8 +42,7 @@ public class TripleStoreRequest
             String graphName = graphNames.next();       
             model = ds.getNamedModel(graphName);
       		System.out.println("Named graph " + graphName + " size: " + model.size());
-       	}  	       
-        //ds.close();
+       	}  	
     }
     
     public void consult(){

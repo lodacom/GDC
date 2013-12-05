@@ -1,11 +1,13 @@
 package controllers;
 
 import java.util.*;
+
 import models.GlobalRequest;
 import models.SearchForm;
 import models.TownInformation;
 import play.*;
 import play.data.Form;
+import play.libs.Json;
 import play.mvc.*;
 import views.html.*;
 
@@ -23,6 +25,16 @@ public class Application extends Controller {
         return ok(index.render(regions,departements,villes,infoRegions));
     }
 
+    public static Result affichage(){
+    	GlobalRequest gr=new GlobalRequest();
+    	List<String> regions=gr.regions();
+    	List<String> departements=gr.departements();
+    	List<String> villes=gr.cities();
+    	
+    	List<TownInformation> infoRegions=null;
+        return ok(index.render(regions,departements,villes,infoRegions));
+    }
+    
     public static Result search(){
     	GlobalRequest gr=new GlobalRequest();
     	List<String> regions=gr.regions();
@@ -51,7 +63,7 @@ public class Application extends Controller {
     			break;
     		}
     		//System.out.println(region+" "+departement+" "+ville+" "+radio);
-    		return ok(index.render(regions,departements,villes,infoRegions));
+    		return ok(Json.toJson(infoRegions));
     	}
     }
 }

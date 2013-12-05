@@ -43,7 +43,14 @@
 							maxZoom : 18,
 							attribution : 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery � <a href="http://cloudmade.com">CloudMade</a>'
 						}).addTo(map);
-		var marker = L.marker([ 51.5, -0.09 ]).addTo(map);
-		marker.bindPopup("<b>Nom de la ville</b></br>Nombre d'habitants: <br/>");
+		$.post("/search",{ }, function(response){
+			//ERREUR
+      		if(typeof response == 'string') alert(response);
+      		//CAS NORMAL
+      		else{  
+      			var marker = L.marker([ response[0].longitude, response[0].latitude ]).addTo(map);
+      		//	marker.bindPopup("<b>Nom de l'entite:</b>"+response[0].entite+"<b>Nom du chef-lieu/ville</b>"+response[0]nom_commune+"</br>Nombre d'habitants:"+response[0].population+" <br/>");
+      		}
+			});
 	</script>
 }

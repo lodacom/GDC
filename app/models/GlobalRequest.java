@@ -82,20 +82,8 @@ public class GlobalRequest {
 	public ArrayList<TownInformation> regions(String region){
 		ArrayList<TownInformation> regions=new ArrayList<TownInformation>();
 		
-		String request,request2="";
+		String request;
 		if (region!="regions"){
-			request2="SELECT ?t ?pop ?lat ?long "
-	        		+ "WHERE { "
-	        		+ "?s geonames:featureCode ?c . "
-	        		+ "?s geonames:name ?t  . "
-	        		+ "?s geonames:population ?pop . "
-	        		+ "?s pos:lat ?lat . "
-	        		+ "?s pos:long ?long . "
-	        		+ "?chose region:Region_NccEnr ?region "
-	        		+ "FILTER (regex(str(?c),\".*A.ADM1\") && str(?region)=str(?t))"
-	        		+ "} "
-	        		+ "ORDER BY ASC(?region)";
-	        		
 			request="SELECT ?communes (SUM(?redev) AS ?nbre_redev) (AVG(?im) AS ?impot_moyen) (AVG(?pm) AS ?patrimoine_moyen) ?long ?lat ?pop "
 				+"WHERE { "
 				+"?num_commune cog_r:Cog_R_NccEnr ?communes . "
@@ -141,7 +129,6 @@ public class GlobalRequest {
 			String nbre_redev=sol.get("?nbre_redev").toString();
 			String impot_moyen=sol.get("?impot_moyen").toString();
 			String patrimoine_moyen=sol.get("?patrimoine_moyen").toString();
-			//String regionR=sol.get("?t").toString();
 			String longitude=sol.get("?long").toString();
 			String latitude=sol.get("?lat").toString();
 			String pop=sol.get("?pop").toString();
@@ -149,8 +136,8 @@ public class GlobalRequest {
 			impot_moyen=impot_moyen.replaceAll("\\^.*", "");
 			patrimoine_moyen=patrimoine_moyen.replaceAll("\\^.*", "");
 			
-			System.out.println(longitude+" "+latitude+" "+pop);
-			info=new TownInformation(commune, Integer.parseInt(nbre_redev), Float.parseFloat(impot_moyen), Float.parseFloat(patrimoine_moyen),Double.parseDouble(longitude),Double.parseDouble(latitude));
+			//System.out.println(longitude+" "+latitude+" "+pop);
+			info=new TownInformation(region,Integer.parseInt(pop),commune, Integer.parseInt(nbre_redev), Float.parseFloat(impot_moyen), Float.parseFloat(patrimoine_moyen),Double.parseDouble(longitude),Double.parseDouble(latitude));
 			regions.add(info);
 		}
 		return regions;
