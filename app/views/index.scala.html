@@ -30,11 +30,6 @@
 		<label>Voisins:</label><input type="checkbox" name="voisin" id="voisin"/><br/>
 	<input type="submit" value="Cherchez les riches"/>
 	</form>
-	@if(infoRegion!=null){
-		@for(infoR <- infoRegion){
-			@infoR<br/>
-		}
-	}
 	  <script>
 		var map = L.map('map').setView([ 46, -2 ], 5);
 		L.tileLayer(
@@ -49,9 +44,8 @@
       		if(typeof response == 'string') alert(response);
       		//CAS NORMAL
       		else{  
-      			//alert(response[0].entite);
-      			var marker = L.marker([ response[0].longitude, response[0].latitude ]).addTo(map);
-      			marker.bindPopup("<b>Nom de l'entite:</b>"+response[0].entite+"<b>Nom du chef-lieu/ville</b>"+response[0].nom_commune+"</br>Nombre d'habitants:"+response[0].population+" <br/>");
+      			var marker = L.marker([response[0].latitude , response[0].longitude]).addTo(map);
+      			marker.bindPopup("<b>Nom de l'entité: </b>"+response[0].entite+"<br/><b>Nom du chef-lieu/ville: </b>"+response[0].nom_commune+"</br>Nombre d'habitants :"+response[0].population+"<br/>"+"Nombre de redevables à l'ISF 2002: "+response[0].nbre_redev+"<br/>"+"Nombre de redevables à l'ISF 2008: "+response[1].nbre_redev+"<br/>"+"Impot moyen 2002: "+response[0].impot_moyen+"<br/>"+"Impot moyen 2008: "+response[1].impot_moyen+"<br/>"+"Patrimoine moyen 2002: "+response[0].patrimoine_moyen+"<br/>"+"Patrimoine moyen 2008: "+response[1].patrimoine_moyen+"<br/>");
       		}
 			});
 	</script>
