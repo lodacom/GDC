@@ -14,8 +14,8 @@ import views.html.*;
 public class Application extends Controller {
 
 	static Form<SearchForm> formulaire=Form.form(SearchForm.class);
-	static List<TownInformation> infoRegions=null;
-
+	static List<TownInformation> infoEntites=null;
+	
 	public static Result index() {
 		GlobalRequest gr=new GlobalRequest();
 		List<String> regions=gr.regions();
@@ -34,7 +34,7 @@ public class Application extends Controller {
 
 		Form<SearchForm> filledForm = formulaire.bindFromRequest();
 		if(filledForm.hasErrors()) {
-			return ok(index.render(regions,departements,villes,infoRegions));
+			return ok(index.render(regions,departements,villes,infoEntites));
 		}else{
 			String region=filledForm.field("regions").value();
 			String departement=filledForm.field("departements").value();
@@ -42,21 +42,21 @@ public class Application extends Controller {
 			String radio=filledForm.field("radio_zone").value();
 			switch(radio){
 			case "radio_region":
-				infoRegions=gr.regions(region);
+				infoEntites=gr.regions(region);
 				break;
 			case "radio_departement":
-
+				infoEntites=gr.departements(departement);
 				break;
 			case "radio_ville":
 
 				break;
 			}
-			return ok(index.render(regions,departements,villes,infoRegions));
+			return ok(index.render(regions,departements,villes,infoEntites));
 		}
 	}
 
 
 	public static Result search(){
-		return ok(Json.toJson(infoRegions));
+		return ok(Json.toJson(infoEntites));
 	}
 }
