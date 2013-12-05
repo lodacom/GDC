@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/2988289/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/2988289/about.rdf"/>
+<gn:name>Pays de la Loire</gn:name>
+<gn:officialName xml:lang="es">Países del Loira</gn:officialName>
+<gn:officialName xml:lang="de">Pays de la Loire</gn:officialName>
+<gn:officialName xml:lang="en">Pays de la Loire</gn:officialName>
+<gn:officialName xml:lang="fr">Pays de la Loire</gn:officialName>
+<gn:alternateName xml:lang="fr">Pays-de-la-Loire</gn:alternateName>
+<gn:alternateName xml:lang="fr">Pays de Loire</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM1"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>3482594</gn:population>
+<wgs84_pos:lat>47.5</wgs84_pos:lat>
+<wgs84_pos:long>-1</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/2988289/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/2988289/region-pays-de-la-loire.html"/>
+<gn:wikipediaArticle rdf:resource="http://en.wikipedia.org/wiki/Pays_de_la_Loire"/>
+<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Pays_de_la_Loire"/>
+<gn:wikipediaArticle rdf:resource="http://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B0_%D0%9B%D1%83%D0%B0%D1%80%D1%8B"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/region/52"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/2988289/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/2988289/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/2988289/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-01-15</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-09-17</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>

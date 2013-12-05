@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/6434483/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/6434483/about.rdf"/>
+<gn:name>Nantes</gn:name>
+<gn:alternateName xml:lang="ko">낭트</gn:alternateName>
+<gn:alternateName xml:lang="ja">ナント</gn:alternateName>
+<gn:alternateName xml:lang="ta">நாந்து</gn:alternateName>
+<gn:alternateName xml:lang="th">น็องต์</gn:alternateName>
+<gn:alternateName xml:lang="lt">Nantas</gn:alternateName>
+<gn:alternateName xml:lang="oc">Nantas</gn:alternateName>
+<gn:alternateName xml:lang="lv">Nante</gn:alternateName>
+<gn:alternateName xml:lang="ext">Nanti</gn:alternateName>
+<gn:alternateName xml:lang="eo">Nanto</gn:alternateName>
+<gn:alternateName xml:lang="br">Naoned</gn:alternateName>
+<gn:alternateName xml:lang="cy">Naoned</gn:alternateName>
+<gn:alternateName xml:lang="gv">Naoned</gn:alternateName>
+<gn:alternateName xml:lang="kw">Naoned</gn:alternateName>
+<gn:alternateName xml:lang="la">Portus Namnetum</gn:alternateName>
+<gn:alternateName xml:lang="ar">نانت</gn:alternateName>
+<gn:alternateName xml:lang="fa">نانت</gn:alternateName>
+<gn:alternateName xml:lang="mzn">نانت</gn:alternateName>
+<gn:alternateName xml:lang="pnb">نانتیز</gn:alternateName>
+<gn:alternateName xml:lang="he">נאנט</gn:alternateName>
+<gn:alternateName xml:lang="el">Νάντη</gn:alternateName>
+<gn:alternateName xml:lang="be">Горад Нант</gn:alternateName>
+<gn:alternateName xml:lang="bg">Нант</gn:alternateName>
+<gn:alternateName xml:lang="mk">Нант</gn:alternateName>
+<gn:alternateName xml:lang="ru">Нант</gn:alternateName>
+<gn:alternateName xml:lang="sr">Нант</gn:alternateName>
+<gn:alternateName xml:lang="uk">Нант</gn:alternateName>
+<gn:alternateName xml:lang="ka">ნანტი</gn:alternateName>
+<gn:alternateName xml:lang="hi">नांत</gn:alternateName>
+<gn:alternateName xml:lang="mr">नाँत</gn:alternateName>
+<gn:alternateName xml:lang="zh">南特</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM4"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>282047</gn:population>
+<wgs84_pos:lat>47.21722</wgs84_pos:lat>
+<wgs84_pos:long>-1.55389</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/2990968/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentADM1 rdf:resource="http://sws.geonames.org/2988289/"/>
+<gn:parentADM2 rdf:resource="http://sws.geonames.org/2997861/"/>
+<gn:parentADM3 rdf:resource="http://sws.geonames.org/2990968/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/6434483/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/6434483/nantes.html"/>
+<gn:wikipediaArticle rdf:resource="http://en.wikipedia.org/wiki/Nantes"/>
+<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Nantes"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/commune/44109"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/6434483/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/6434483/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/6434483/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2007-03-22</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-05-10</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>

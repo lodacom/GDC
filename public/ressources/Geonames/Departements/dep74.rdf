@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/2997861/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/2997861/about.rdf"/>
+<gn:name>Loire-Atlantique</gn:name>
+<gn:officialName xml:lang="fr">Département de la Loire-Atlantique</gn:officialName>
+<gn:alternateName>Département de la Loire-Atlantique</gn:alternateName>
+<gn:officialName xml:lang="it">Loira Atlantica</gn:officialName>
+<gn:officialName xml:lang="es">Loira Atlántico</gn:officialName>
+<gn:officialName xml:lang="de">Loire-Atlantique</gn:officialName>
+<gn:officialName xml:lang="en">Loire-Atlantique</gn:officialName>
+<gn:officialName xml:lang="fr">Loire-Atlantique</gn:officialName>
+<gn:alternateName>Loire-Inférieure</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM2"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>1301325</gn:population>
+<wgs84_pos:lat>47.25</wgs84_pos:lat>
+<wgs84_pos:long>-1.83333</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/2988289/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentADM1 rdf:resource="http://sws.geonames.org/2988289/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/2997861/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/2997861/departement-de-la-loire-atlantique.html"/>
+<gn:wikipediaArticle rdf:resource="http://en.wikipedia.org/wiki/Loire-Atlantique"/>
+<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Loire-Atlantique"/>
+<gn:wikipediaArticle rdf:resource="http://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%B0%D1%80%D0%B0_%D0%90%D1%82%D0%BB%D0%B0%D0%BD%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/departement/44"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/2997861/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/2997861/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/2997861/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-01-15</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-05-17</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>

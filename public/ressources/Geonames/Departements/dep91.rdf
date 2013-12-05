@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/3026646/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/3026646/about.rdf"/>
+<gn:name>Charente</gn:name>
+<gn:officialName xml:lang="es">Charenta</gn:officialName>
+<gn:officialName xml:lang="de">Charente</gn:officialName>
+<gn:officialName xml:lang="en">Charente</gn:officialName>
+<gn:officialName xml:lang="fr">Charente</gn:officialName>
+<gn:officialName xml:lang="fr">Département de la Charente</gn:officialName>
+<gn:alternateName>Département de la Charente</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM2"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>363913</gn:population>
+<wgs84_pos:lat>45.66667</wgs84_pos:lat>
+<wgs84_pos:long>0.08333</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/2986492/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentADM1 rdf:resource="http://sws.geonames.org/2986492/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/3026646/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/3026646/departement-de-la-charente.html"/>
+<gn:wikipediaArticle rdf:resource="http://en.wikipedia.org/wiki/Charente"/>
+<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Charente"/>
+<gn:wikipediaArticle rdf:resource="http://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D0%B0"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/departement/16"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/3026646/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/3026646/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/3026646/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-01-15</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-05-17</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>

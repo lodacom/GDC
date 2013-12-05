@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/3013756/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/3013756/about.rdf"/>
+<gn:name>Upper Normandy</gn:name>
+<gn:alternateName xml:lang="ko">오트노르망디</gn:alternateName>
+<gn:alternateName xml:lang="ca">Alta Normandia</gn:alternateName>
+<gn:alternateName xml:lang="io">Alta Normandia</gn:alternateName>
+<gn:alternateName xml:lang="it">Alta Normandia</gn:alternateName>
+<gn:alternateName xml:lang="lad">Alta Normandia</gn:alternateName>
+<gn:alternateName xml:lang="pt">Alta Normandia</gn:alternateName>
+<gn:alternateName xml:lang="an">Alta Normandía</gn:alternateName>
+<gn:alternateName xml:lang="es">Alta Normandía</gn:alternateName>
+<gn:alternateName xml:lang="lt">Aukštutinė Normandija</gn:alternateName>
+<gn:alternateName xml:lang="hu">Felső-Normandia</gn:alternateName>
+<gn:alternateName xml:lang="pl">Górna Normandia</gn:alternateName>
+<gn:alternateName xml:lang="hr">Gornja Normandija</gn:alternateName>
+<gn:alternateName xml:lang="nrm">Ĥâote-Normaundie</gn:alternateName>
+<gn:alternateName xml:lang="af">Haute-Normandie</gn:alternateName>
+<gn:alternateName xml:lang="da">Haute-Normandie</gn:alternateName>
+<gn:alternateName xml:lang="de">Haute-Normandie</gn:alternateName>
+<gn:alternateName xml:lang="fi">Haute-Normandie</gn:alternateName>
+<gn:alternateName xml:lang="fr">Haute-Normandie</gn:alternateName>
+<gn:alternateName xml:lang="ms">Haute-Normandie</gn:alternateName>
+<gn:alternateName xml:lang="nn">Haute-Normandie</gn:alternateName>
+<gn:alternateName xml:lang="no">Haute-Normandie</gn:alternateName>
+<gn:alternateName xml:lang="sv">Haute-Normandie</gn:alternateName>
+<gn:officialName>Haute-Normandie</gn:officialName>
+<gn:alternateName xml:lang="nl">Hoog-Normandië</gn:alternateName>
+<gn:alternateName xml:lang="sk">Horná Normandia</gn:alternateName>
+<gn:alternateName xml:lang="frp">Hôta-Normandie</gn:alternateName>
+<gn:alternateName xml:lang="oc">Nauta Normandia</gn:alternateName>
+<gn:alternateName xml:lang="id">Normandia Atas</gn:alternateName>
+<gn:alternateName xml:lang="ro">Normandia de Sus</gn:alternateName>
+<gn:alternateName xml:lang="eu">Normandia Garaia</gn:alternateName>
+<gn:alternateName xml:lang="oc">Normandia Nauta</gn:alternateName>
+<gn:alternateName xml:lang="eo">Supra Normandio</gn:alternateName>
+<gn:alternateName xml:lang="et">Ülem-Normandia</gn:alternateName>
+<gn:alternateName xml:lang="en">Upper Normandy</gn:alternateName>
+<gn:alternateName xml:lang="sl">Zgornja Normandija</gn:alternateName>
+<gn:alternateName xml:lang="he">נורמנדי עילית</gn:alternateName>
+<gn:alternateName xml:lang="ru">Верхняя Нормандия</gn:alternateName>
+<gn:alternateName xml:lang="sr">Горња Нормандија</gn:alternateName>
+<gn:alternateName xml:lang="ka">ზემო ნორმანდია</gn:alternateName>
+<gn:alternateName xml:lang="zh">上諾曼地</gn:alternateName>
+<gn:alternateName xml:lang="ja">オート＝ノルマンディー地域圏</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM1"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>1816716</gn:population>
+<wgs84_pos:lat>49.5</wgs84_pos:lat>
+<wgs84_pos:long>1</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/3013756/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/3013756/region-haute-normandie.html"/>
+<gn:wikipediaArticle rdf:resource="http://en.wikipedia.org/wiki/Upper_Normandy"/>
+<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Upper_Normandy"/>
+<gn:wikipediaArticle rdf:resource="http://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D1%85%D0%BD%D1%8F%D1%8F_%D0%9D%D0%BE%D1%80%D0%BC%D0%B0%D0%BD%D0%B4%D0%B8%D1%8F"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/region/23"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/3013756/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/3013756/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/3013756/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-01-15</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-12-06</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>

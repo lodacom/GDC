@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/2983751/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/2983751/about.rdf"/>
+<gn:name>Rhône-Alpes</gn:name>
+<gn:alternateName xml:lang="ko">론알프</gn:alternateName>
+<gn:alternateName xml:lang="eu">Rhône-Alpeak</gn:alternateName>
+<gn:alternateName xml:lang="cs">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="da">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="de">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="en">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="et">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="fi">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="fr">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="hu">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="id">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="lad">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="nl">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="nn">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="no">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="sk">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="sv">Rhône-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="tr">Rhône-Alpes</gn:alternateName>
+<gn:officialName>Rhône-Alpes</gn:officialName>
+<gn:alternateName xml:lang="pl">Rodan-Alpy</gn:alternateName>
+<gn:alternateName xml:lang="es">Ródano-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="gl">Ródano-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="pt">Ródano-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="io">Rodano Alpi</gn:alternateName>
+<gn:alternateName xml:lang="it">Rodano-Alpi</gn:alternateName>
+<gn:alternateName xml:lang="eo">Rodano-Alpoj</gn:alternateName>
+<gn:alternateName xml:lang="an">Roine-Alpes</gn:alternateName>
+<gn:alternateName xml:lang="ca">Roine-Alps</gn:alternateName>
+<gn:alternateName xml:lang="hr">Rona-Alpe</gn:alternateName>
+<gn:alternateName xml:lang="sl">Rona-Alpe</gn:alternateName>
+<gn:alternateName xml:lang="lt">Rona-Alpės</gn:alternateName>
+<gn:alternateName xml:lang="ro">Ron-Alpi</gn:alternateName>
+<gn:alternateName xml:lang="frp">Rôno-Arpes</gn:alternateName>
+<gn:alternateName xml:lang="oc">Ròse-Aups</gn:alternateName>
+<gn:alternateName xml:lang="he">רון-אלפ</gn:alternateName>
+<gn:alternateName xml:lang="he">רון-אלפס</gn:alternateName>
+<gn:alternateName xml:lang="sr">Рона-Алпи</gn:alternateName>
+<gn:alternateName xml:lang="ru">Рона — Альпы</gn:alternateName>
+<gn:alternateName xml:lang="ka">რონა-ალპები</gn:alternateName>
+<gn:alternateName xml:lang="ja">ローヌ＝アルプ地域圏</gn:alternateName>
+<gn:alternateName xml:lang="zh">罗纳-阿尔卑斯</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM1"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>6065959</gn:population>
+<wgs84_pos:lat>45.5</wgs84_pos:lat>
+<wgs84_pos:long>5.33333</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/2983751/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/2983751/region-rhone-alpes.html"/>
+<gn:wikipediaArticle rdf:resource="http://en.wikipedia.org/wiki/Rh%C3%B4ne-Alpes"/>
+<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Rh%C3%B4ne-Alpes"/>
+<gn:wikipediaArticle rdf:resource="http://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D0%BD%D0%B0_%E2%80%94_%D0%90%D0%BB%D1%8C%D0%BF%D1%8B"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/region/82"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/2983751/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/2983751/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/2983751/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-01-15</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-09-17</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>

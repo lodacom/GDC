@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/6454414/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/6454414/about.rdf"/>
+<gn:name>Lille</gn:name>
+<gn:alternateName xml:lang="ko">릴</gn:alternateName>
+<gn:alternateName xml:lang="th">ลีล</gn:alternateName>
+<gn:alternateName xml:lang="ja">リール</gn:alternateName>
+<gn:alternateName xml:lang="ta">லீல்</gn:alternateName>
+<gn:alternateName xml:lang="la">Insula</gn:alternateName>
+<gn:alternateName xml:lang="ug">Lil</gn:alternateName>
+<gn:alternateName xml:lang="frp">Lila</gn:alternateName>
+<gn:alternateName xml:lang="lt">Lilis</gn:alternateName>
+<gn:alternateName xml:lang="az">Lill</gn:alternateName>
+<gn:alternateName xml:lang="ca">Lilla</gn:alternateName>
+<gn:alternateName xml:lang="it">Lilla</gn:alternateName>
+<gn:alternateName xml:lang="lmo">Lilla</gn:alternateName>
+<gn:alternateName xml:lang="oc">Lilla</gn:alternateName>
+<gn:alternateName xml:lang="nl">Rijsel</gn:alternateName>
+<gn:alternateName xml:lang="vls">Rysel</gn:alternateName>
+<gn:alternateName xml:lang="pnb">للی</gn:alternateName>
+<gn:alternateName xml:lang="fa">لیل</gn:alternateName>
+<gn:alternateName xml:lang="ar">ليل</gn:alternateName>
+<gn:alternateName xml:lang="he">ליל</gn:alternateName>
+<gn:alternateName xml:lang="el">Λιλ</gn:alternateName>
+<gn:alternateName xml:lang="be">Горад Ліль</gn:alternateName>
+<gn:alternateName xml:lang="bg">Лил</gn:alternateName>
+<gn:alternateName xml:lang="mk">Лил</gn:alternateName>
+<gn:alternateName xml:lang="sr">Лил</gn:alternateName>
+<gn:alternateName xml:lang="ru">Лилль</gn:alternateName>
+<gn:alternateName xml:lang="uk">Лілль</gn:alternateName>
+<gn:alternateName xml:lang="ka">ლილი</gn:alternateName>
+<gn:alternateName xml:lang="hi">लील</gn:alternateName>
+<gn:alternateName xml:lang="mr">लील</gn:alternateName>
+<gn:alternateName xml:lang="zh">里尔</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM4"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>226827</gn:population>
+<wgs84_pos:lat>50.63194</wgs84_pos:lat>
+<wgs84_pos:long>3.0575</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/2998323/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentADM1 rdf:resource="http://sws.geonames.org/2990119/"/>
+<gn:parentADM2 rdf:resource="http://sws.geonames.org/2990129/"/>
+<gn:parentADM3 rdf:resource="http://sws.geonames.org/2998323/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/6454414/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/6454414/lille.html"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/commune/59350"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/6454414/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/6454414/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/6454414/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2007-04-01</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-05-10</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>

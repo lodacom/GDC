@@ -1,0 +1,49 @@
+@(regions: List[String],departements: List[String],villes: List[String],infoRegion: List[TownInformation])
+
+@main("Accueil") {
+	<div id="map" style="width: 600px; height: 400px"></div>
+	<form method="post" action="">
+		<label id="region">Régions:</label>
+		<select name="regions" id="regions">
+			<option value="regions">Régions</option>
+			@for(region <- regions) {
+				<option value=@region>@region</option>
+			}
+		</select>
+		<input type="radio" name="radio_zone" id="radio_region" value="radio_region"/><br/>
+		<label id="departement">Départements:</label>
+		<select name="departements" id="departements">
+			<option value="departements">Départements</option>
+			@for(departement <- departements) {
+				<option value=@departement>@departement</option>
+			}
+		</select>
+		<input type="radio" name="radio_zone" id="radio_departement" value="radio_departement"/><br/>
+		<label id="ville">Villes:</label>
+		<select name="villes" id="villes">
+			<option value="villes">Villes</option>
+			@for(ville <- villes) {
+				<option value=@ville>@ville</option>
+			}
+		</select>
+		<input type="radio" name="radio_zone" id="radio_ville" value="radio_ville"/><br/>
+		<label>Voisins:</label><input type="checkbox" name="voisin" id="voisin"/><br/>
+	<input type="submit" value="Cherchez les riches"/>
+	</form>
+	@if(infoRegion!=null){
+		@for(infoR <- infoRegion){
+			@infoR<br/>
+		}
+	}
+	  <script>
+		var map = L.map('map').setView([ 46, -2 ], 5);
+		L.tileLayer(
+						'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png',
+						{
+							maxZoom : 18,
+							attribution : 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery � <a href="http://cloudmade.com">CloudMade</a>'
+						}).addTo(map);
+		var marker = L.marker([ 51.5, -0.09 ]).addTo(map);
+		marker.bindPopup("<b>Nom de la ville</b></br>Nombre d'habitants: <br/>");
+	</script>
+}

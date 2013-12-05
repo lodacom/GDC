@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/6427109/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/6427109/about.rdf"/>
+<gn:name>Caen</gn:name>
+<gn:alternateName xml:lang="ko">캉</gn:alternateName>
+<gn:alternateName xml:lang="ta">கன்</gn:alternateName>
+<gn:alternateName xml:lang="am">ካየን</gn:alternateName>
+<gn:alternateName xml:lang="ja">カーン</gn:alternateName>
+<gn:alternateName xml:lang="th">ก็อง</gn:alternateName>
+<gn:alternateName xml:lang="la">Cadomum</gn:alternateName>
+<gn:alternateName xml:lang="ang">Caðum</gn:alternateName>
+<gn:alternateName xml:lang="oc">Can</gn:alternateName>
+<gn:alternateName xml:lang="nrm">Kaem</gn:alternateName>
+<gn:alternateName xml:lang="lv">Kāna</gn:alternateName>
+<gn:alternateName xml:lang="lt">Kanas</gn:alternateName>
+<gn:alternateName xml:lang="ar">كا</gn:alternateName>
+<gn:alternateName xml:lang="fa">کان</gn:alternateName>
+<gn:alternateName xml:lang="pnb">کین</gn:alternateName>
+<gn:alternateName xml:lang="el">Καέν</gn:alternateName>
+<gn:alternateName xml:lang="be">Горад Кан</gn:alternateName>
+<gn:alternateName xml:lang="bg">Кан</gn:alternateName>
+<gn:alternateName xml:lang="os">Кан</gn:alternateName>
+<gn:alternateName xml:lang="ru">Кан</gn:alternateName>
+<gn:alternateName xml:lang="sr">Кан</gn:alternateName>
+<gn:alternateName xml:lang="uk">Кан</gn:alternateName>
+<gn:alternateName xml:lang="ka">კანი</gn:alternateName>
+<gn:alternateName xml:lang="mr">कां</gn:alternateName>
+<gn:alternateName xml:lang="zh">卡昂</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM4"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>109312</gn:population>
+<wgs84_pos:lat>49.18222</wgs84_pos:lat>
+<wgs84_pos:long>-0.37056</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/3029240/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentADM1 rdf:resource="http://sws.geonames.org/3034693/"/>
+<gn:parentADM2 rdf:resource="http://sws.geonames.org/3029094/"/>
+<gn:parentADM3 rdf:resource="http://sws.geonames.org/3029240/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/6427109/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/6427109/caen.html"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/commune/14118"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/6427109/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/6427109/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/6427109/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2007-03-22</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-05-10</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>

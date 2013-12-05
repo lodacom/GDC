@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/3038033/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/3038033/about.rdf"/>
+<gn:name>Alsace</gn:name>
+<gn:alternateName xml:lang="ko">알자스</gn:alternateName>
+<gn:alternateName xml:lang="th">แคว้นอาลซัส</gn:alternateName>
+<gn:alternateName xml:lang="da">Alsace</gn:alternateName>
+<gn:alternateName xml:lang="en">Alsace</gn:alternateName>
+<gn:alternateName xml:lang="et">Alsace</gn:alternateName>
+<gn:alternateName xml:lang="fr">Alsace</gn:alternateName>
+<gn:alternateName xml:lang="id">Alsace</gn:alternateName>
+<gn:alternateName xml:lang="ms">Alsace</gn:alternateName>
+<gn:alternateName xml:lang="nn">Alsace</gn:alternateName>
+<gn:alternateName xml:lang="no">Alsace</gn:alternateName>
+<gn:alternateName xml:lang="sv">Alsace</gn:alternateName>
+<gn:officialName>Alsace</gn:officialName>
+<gn:alternateName xml:lang="nrm">Alsache</gn:alternateName>
+<gn:alternateName xml:lang="an">Alsacia</gn:alternateName>
+<gn:alternateName xml:lang="ast">Alsacia</gn:alternateName>
+<gn:alternateName xml:lang="es">Alsacia</gn:alternateName>
+<gn:alternateName xml:lang="gl">Alsacia</gn:alternateName>
+<gn:alternateName xml:lang="ro">Alsacia</gn:alternateName>
+<gn:alternateName xml:lang="pt">Alsácia</gn:alternateName>
+<gn:alternateName xml:lang="ca">Alsàcia</gn:alternateName>
+<gn:alternateName xml:lang="oc">Alsàcia</gn:alternateName>
+<gn:alternateName xml:lang="tr">Alsas</gn:alternateName>
+<gn:alternateName xml:lang="sq">Alsasa</gn:alternateName>
+<gn:alternateName xml:lang="lad">Alsasia</gn:alternateName>
+<gn:alternateName xml:lang="lmo">Alsasia</gn:alternateName>
+<gn:alternateName xml:lang="cs">Alsasko</gn:alternateName>
+<gn:alternateName xml:lang="sk">Alsasko</gn:alternateName>
+<gn:alternateName xml:lang="kw">Alsass</gn:alternateName>
+<gn:alternateName xml:lang="pms">Alsassia</gn:alternateName>
+<gn:alternateName xml:lang="co">Alsazia</gn:alternateName>
+<gn:alternateName xml:lang="eu">Alsazia</gn:alternateName>
+<gn:alternateName xml:lang="it">Alsazia</gn:alternateName>
+<gn:alternateName xml:lang="vec">Alsazia</gn:alternateName>
+<gn:alternateName xml:lang="scn">Alsazzia</gn:alternateName>
+<gn:alternateName xml:lang="frp">Alzace</gn:alternateName>
+<gn:alternateName xml:lang="io">Alzacia</gn:alternateName>
+<gn:alternateName xml:lang="sl">Alzacija</gn:alternateName>
+<gn:alternateName xml:lang="pl">Alzacja</gn:alternateName>
+<gn:alternateName xml:lang="eo">Alzaco</gn:alternateName>
+<gn:alternateName xml:lang="ht">Alzas</gn:alternateName>
+<gn:alternateName xml:lang="la">Elisatia</gn:alternateName>
+<gn:alternateName xml:lang="af">Elsas</gn:alternateName>
+<gn:alternateName xml:lang="fy">Elsas</gn:alternateName>
+<gn:alternateName xml:lang="ku">Elsas</gn:alternateName>
+<gn:alternateName xml:lang="als">Elsass</gn:alternateName>
+<gn:alternateName xml:lang="ang">Elsass</gn:alternateName>
+<gn:alternateName xml:lang="bar">Elsass</gn:alternateName>
+<gn:alternateName xml:lang="de">Elsass</gn:alternateName>
+<gn:alternateName xml:lang="fi">Elsass</gn:alternateName>
+<gn:alternateName xml:lang="is">Elsass</gn:alternateName>
+<gn:alternateName xml:lang="lb">Elsass</gn:alternateName>
+<gn:alternateName xml:lang="pdc">Elsass</gn:alternateName>
+<gn:alternateName xml:lang="de">Elsaß</gn:alternateName>
+<gn:alternateName xml:lang="pfl">Elsaß</gn:alternateName>
+<gn:alternateName xml:lang="br">Elzas</gn:alternateName>
+<gn:alternateName xml:lang="bs">Elzas</gn:alternateName>
+<gn:alternateName xml:lang="hr">Elzas</gn:alternateName>
+<gn:alternateName xml:lang="nl">Elzas</gn:alternateName>
+<gn:alternateName xml:lang="lv">Elzasa</gn:alternateName>
+<gn:alternateName xml:lang="lt">Elzasas</gn:alternateName>
+<gn:alternateName xml:lang="hu">Elzász</gn:alternateName>
+<gn:alternateName xml:lang="fa">آلزاس</gn:alternateName>
+<gn:alternateName xml:lang="ar">ألزاس</gn:alternateName>
+<gn:alternateName xml:lang="he">אלזס</gn:alternateName>
+<gn:alternateName xml:lang="el">Αλσατία</gn:alternateName>
+<gn:alternateName xml:lang="sr">Алзас</gn:alternateName>
+<gn:alternateName xml:lang="bg">Елзас</gn:alternateName>
+<gn:alternateName xml:lang="uk">Ельзас</gn:alternateName>
+<gn:alternateName xml:lang="cv">Эльзас</gn:alternateName>
+<gn:alternateName xml:lang="os">Эльзас</gn:alternateName>
+<gn:alternateName xml:lang="ru">Эльзас</gn:alternateName>
+<gn:alternateName xml:lang="hy">Էլզաս</gn:alternateName>
+<gn:alternateName xml:lang="ka">ელზასი</gn:alternateName>
+<gn:alternateName xml:lang="mr">अल्सास</gn:alternateName>
+<gn:alternateName xml:lang="bn">আল্‌জাস</gn:alternateName>
+<gn:alternateName xml:lang="ja">アルザス地域圏</gn:alternateName>
+<gn:alternateName xml:lang="zh">阿尔萨斯</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM1"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>1827248</gn:population>
+<wgs84_pos:lat>48.5</wgs84_pos:lat>
+<wgs84_pos:long>7.5</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/3038033/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/3038033/region-alsace.html"/>
+<gn:wikipediaArticle rdf:resource="http://en.wikipedia.org/wiki/Alsace"/>
+<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Alsace"/>
+<gn:wikipediaArticle rdf:resource="http://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D1%8C%D0%B7%D0%B0%D1%81"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/region/42"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/3038033/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/3038033/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/3038033/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-01-15</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-09-17</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>

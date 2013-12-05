@@ -1,0 +1,286 @@
+@prefix map: <#> .
+@prefix db: <> .
+@prefix gdcproject: <http://www.gdcproject.fr/gdcproject/> .
+@prefix am: <http://www.gdcproject.fr/gdcproject/am/> .
+@prefix cog: <http://www.gdcproject.fr/gdcproject/cog/> .
+@prefix cog_r: <http://www.gdcproject.fr/gdcproject/cog_r/> .
+@prefix commune: <http://www.gdcproject.fr/gdcproject/commune/> .
+@prefix departement: <http://www.gdcproject.fr/gdcproject/departement/> .
+@prefix impot: <http://www.gdcproject.fr/gdcproject/impot/> .
+@prefix localite: <http://www.gdcproject.fr/gdcproject/localite/> .
+@prefix region: <http://www.gdcproject.fr/gdcproject/region/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+
+map:database a d2rq:Database;
+	d2rq:jdbcDriver "oracle.jdbc.OracleDriver";
+	d2rq:jdbcDSN "jdbc:oracle:thin:@localhost:1521/oracle";
+	d2rq:username "duplouy";
+	d2rq:password "Lo124625";
+	.
+
+# .......................................................................................................
+# Table Arrondissement_Municipal
+map:Arrondissement_Municipal a d2rq:ClassMap;
+d2rq:dataStorage map:database;
+d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/am/@@DUPLOUY.ARRONDISSEMENT_MUNICIPAL.CODEINSEE|urlify@@";
+d2rq:class am:Arrondissement_Municipal;
+.
+
+map:AM_Insee a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Arrondissement_Municipal;
+d2rq:property am:AM_Insee;
+d2rq:column "DUPLOUY.ARRONDISSEMENT_MUNICIPAL.CODEINSEE";
+# d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/am/@@DUPLOUY.ARRONDISSEMENT_MUNICIPAL.CODEINSEE@@";
+.
+
+map:Narm a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Arrondissement_Municipal;
+d2rq:property am:Narm;
+d2rq:column "DUPLOUY.ARRONDISSEMENT_MUNICIPAL.NARM";
+# d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/am/@@DUPLOUY.ARRONDISSEMENT_MUNICIPAL.NARM@@";
+.
+
+map:AM_CodeCommune a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Arrondissement_Municipal;
+d2rq:property am:AM_CodeCommune;
+d2rq:column "DUPLOUY.ARRONDISSEMENT_MUNICIPAL.CODECOMMUNE";
+# d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/am/@@DUPLOUY.ARRONDISSEMENT_MUNICIPAL.CODECOMMUNE@@";
+.
+
+# .......................................................................................................
+# Table Cog_R
+map:Cog_R a d2rq:ClassMap;
+d2rq:dataStorage map:database;
+d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/cog_r/@@DUPLOUY.COG_R.CODEINSEE|urlify@@";
+d2rq:class cog:Cog_R;
+.
+
+map:Cog_R_Insee a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Cog_R;
+d2rq:property cog_r:Cog_R_Insee;
+# d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/cog_r/@@DUPLOUY.COG_R.CODEINSEE@@";
+d2rq:column "DUPLOUY.COG_R.CODEINSEE";
+.
+
+map:Cog_R_CodeReg a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Cog_R;
+d2rq:property cog_r:Cog_R_CodeReg;
+# d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/cog_r/@@DUPLOUY.COG_R.CODEREG@@";
+d2rq:refersToClassMap map:Region;
+d2rq:join "DUPLOUY.COG_R.CODEREG=DUPLOUY.REGION.REGION";
+.
+
+map:Cog_R_CodeDep a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Cog_R;
+d2rq:property cog_r:Cog_R_CodeDep;
+# d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/cog_r/@@DUPLOUY.COG_R.CODEDEP@@";
+d2rq:refersToClassMap map:Departement;
+d2rq:join "DUPLOUY.COG_R.CODEDEP=DUPLOUY.DEPARTEMENT.DEPARTEMENT";
+.
+
+map:Cog_R_CodeCommune a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Cog_R;
+d2rq:property cog_r:Cog_R_CodeCommune;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/cog_r/@@DUPLOUY.COG_R.CODECOMMUNE@@";
+d2rq:column "DUPLOUY.COG_R.CODECOMMUNE";
+.
+
+map:Cog_R_Ar a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Cog_R;
+d2rq:property cog_r:Cog_R_Ar;
+d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/cog_r/@@DUPLOUY.COG_R.AR@@";
+.
+
+map:Cog_R_Ct a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Cog_R;
+d2rq:property cog_r:Cog_R_Ct;
+d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/cog_r/@@DUPLOUY.COG_R.CT@@";
+.
+
+map:Cog_R_Ncc a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Cog_R;
+d2rq:property cog_r:Cog_R_Ncc;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/cog_r/@@DUPLOUY.COG_R.NCC@@";
+d2rq:column "DUPLOUY.COG_R.NCC";
+.
+
+map:Cog_R_NccEnr a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Cog_R;
+d2rq:property cog_r:Cog_R_NccEnr;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/cog_r/@@DUPLOUY.COG_R.NCCENR@@";
+d2rq:column "DUPLOUY.COG_R.NCCENR";
+.
+
+# .......................................................................................................
+# Table Departement
+map:Departement a d2rq:ClassMap;
+d2rq:dataStorage map:database;
+d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/departement/@@DUPLOUY.DEPARTEMENT.DEPARTEMENT|urlify@@";
+d2rq:class departement:Departement;
+.
+
+map:Departement_Region a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Departement;
+d2rq:property departement:Departement_Region;
+# d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/departement/@@DUPLOUY.DEPARTEMENT.REGION@@";
+d2rq:refersToClassMap map:Region;
+d2rq:join "DUPLOUY.DEPARTEMENT.REGION=DUPLOUY.REGION.REGION";
+.
+
+map:DDepartement a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Departement;
+d2rq:property departement:DDepartement;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/departement/@@DUPLOUY.DEPARTEMENT.DEPARTEMENT@@";
+d2rq:column "DUPLOUY.DEPARTEMENT.DEPARTEMENT";
+.
+
+map:Departement_ChefLieu a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Departement;
+d2rq:property departement:Departement_ChefLieu;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/departement/@@DUPLOUY.DEPARTEMENT.CHEFLIEU@@";
+d2rq:column "DUPLOUY.DEPARTEMENT.CHEFLIEU";
+.
+
+map:Departement_Tncc a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Departement;
+d2rq:property departement:Departement_Tncc;
+d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/departement/@@DUPLOUY.DEPARTEMENT.TNCC@@";
+.
+
+map:Departement_Ncc a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Departement;
+d2rq:property departement:Departement_Ncc;
+# d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/departement/@@DUPLOUY.DEPARTEMENT.NCC@@";
+d2rq:column "DUPLOUY.DEPARTEMENT.NCC";
+.
+
+map:Departement_NccEnr a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Departement;
+d2rq:property departement:Departement_NccEnr;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/departement/@@DUPLOUY.DEPARTEMENT.NCCENR@@"; 
+d2rq:column "DUPLOUY.DEPARTEMENT.NCCENR";
+.
+
+# .......................................................................................................
+# Table Impot
+map:Impot a d2rq:ClassMap;
+d2rq:dataStorage map:database;
+d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/impot/@@DUPLOUY.IMPOT.CODEIMP|urlify@@";
+d2rq:class impot:Impot;
+.
+
+map:CodeImp a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Impot;
+d2rq:property impot:CodeImp;
+d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/impot/@@DUPLOUY.IMPOT.CODEIMP@@";
+.
+
+map:Impot_Insee a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Impot;
+d2rq:property impot:Impot_Insee;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/impot/@@DUPLOUY.IMPOT.CODEINSEE@@";
+d2rq:refersToClassMap map:Cog_R;
+d2rq:join "DUPLOUY.COG_R.CODEINSEE=DUPLOUY.IMPOT.CODEINSEE";
+.
+
+map:NbreRedevable a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Impot;
+d2rq:property impot:NbreRedevable;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/impot/@@DUPLOUY.IMPOT.NBREREDEVABLE@@";
+d2rq:column "DUPLOUY.IMPOT.NBREREDEVABLE";
+d2rq:datatype xsd:decimal;
+.
+
+map:PatrimoineM a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Impot;
+d2rq:property impot:PatrimoineM;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/impot/@@DUPLOUY.IMPOT.PATRIMOINEM@@";
+d2rq:column "DUPLOUY.IMPOT.PATRIMOINEM";
+d2rq:datatype xsd:decimal;
+.
+
+map:ImpotMoyen a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Impot;
+d2rq:property impot:ImpotMoyen;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/impot/@@DUPLOUY.IMPOT.IMPOTMOYEN@@";
+d2rq:column "DUPLOUY.IMPOT.IMPOTMOYEN";
+d2rq:datatype xsd:decimal;
+.
+
+map:Annee a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Impot;
+d2rq:property impot:Annee;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/impot/@@DUPLOUY.IMPOT.ANNEE@@";
+d2rq:column "DUPLOUY.IMPOT.ANNEE";
+d2rq:datatype xsd:decimal;
+.
+# .......................................................................................................
+# Table Localite
+map:Localite a d2rq:ClassMap;
+d2rq:dataStorage map:database;
+d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/localite/@@DUPLOUY.LOCALITE.CODEINSEE|urlify@@";
+d2rq:class localite:Localite;
+.
+
+map:Localite_Insee a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Localite;
+d2rq:property localite:Localite_Insee;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/localite/@@DUPLOUY.LOCALITE.CODEINSEE@@";
+d2rq:refersToClassMap map:Cog_R;
+d2rq:join "DUPLOUY.COG_R.CODEINSEE=DUPLOUY.LOCALITE.CODEINSEE";
+.
+
+map:TypeLocalite a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Localite;
+d2rq:property localite:TypeLocalite;
+d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/localite/@@DUPLOUY.LOCALITE.TYPELOCALITE@@";
+.
+
+# .......................................................................................................
+# Table Region
+map:Region a d2rq:ClassMap;
+d2rq:dataStorage map:database;
+d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/region/@@DUPLOUY.REGION.REGION|urlify@@";
+d2rq:class region:Region;
+.
+
+map:Region_Region a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Region;
+d2rq:property region:Region_Region;
+d2rq:column "DUPLOUY.REGION.REGION";
+
+# d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/region/@@DUPLOUY.REGION.REGION@@";
+.
+
+map:Region_ChefLieu a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Region;
+d2rq:property region:Region_ChefLieu;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/region/@@DUPLOUY.REGION.CHEFLIEU@@";
+d2rq:column "DUPLOUY.REGION.CHEFLIEU";
+
+.
+
+map:Region_Tncc a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Region;
+d2rq:property region:Region_Tncc;
+d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/region/@@DUPLOUY.REGION.TNCC@@";
+.
+
+map:Region_Ncc a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Region;
+d2rq:property region:Region_Ncc;
+d2rq:column "DUPLOUY.REGION.NCC";
+
+# d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/region/@@DUPLOUY.REGION.NCC@@";
+.
+
+map:Region_NccEnr a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Region;
+d2rq:property region:Region_NccEnr;
+#d2rq:uriPattern "http://www.gdcproject.fr/gdcproject/region/@@DUPLOUY.REGION.NCCENR@@";
+d2rq:column "DUPLOUY.REGION.NCCENR";
+.

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/6454307/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/6454307/about.rdf"/>
+<gn:name>Nancy</gn:name>
+<gn:alternateName xml:lang="ko">낭시</gn:alternateName>
+<gn:alternateName xml:lang="am">ናንሲ</gn:alternateName>
+<gn:alternateName xml:lang="ja">ナンシー</gn:alternateName>
+<gn:alternateName xml:lang="th">น็องซี</gn:alternateName>
+<gn:alternateName xml:lang="bo">ནཱན་སི།</gn:alternateName>
+<gn:alternateName xml:lang="la">Nanceium</gn:alternateName>
+<gn:alternateName xml:lang="oc">Nancí</gn:alternateName>
+<gn:alternateName xml:lang="eo">Nancio</gn:alternateName>
+<gn:alternateName xml:lang="az">Nansi</gn:alternateName>
+<gn:alternateName xml:lang="lt">Nansi</gn:alternateName>
+<gn:alternateName xml:lang="lv">Nansī</gn:alternateName>
+<gn:alternateName xml:lang="lb">Nanzeg</gn:alternateName>
+<gn:alternateName xml:lang="fa">نانسی</gn:alternateName>
+<gn:alternateName xml:lang="mzn">نانسی</gn:alternateName>
+<gn:alternateName xml:lang="ar">نانسي</gn:alternateName>
+<gn:alternateName xml:lang="pnb">نینسی</gn:alternateName>
+<gn:alternateName xml:lang="he">נאנסי</gn:alternateName>
+<gn:alternateName xml:lang="el">Νανσύ</gn:alternateName>
+<gn:alternateName xml:lang="be">Горад Нансі</gn:alternateName>
+<gn:alternateName xml:lang="bg">Нанси</gn:alternateName>
+<gn:alternateName xml:lang="kk">Нанси</gn:alternateName>
+<gn:alternateName xml:lang="mk">Нанси</gn:alternateName>
+<gn:alternateName xml:lang="ru">Нанси</gn:alternateName>
+<gn:alternateName xml:lang="sr">Нанси</gn:alternateName>
+<gn:alternateName xml:lang="tg">Нанси</gn:alternateName>
+<gn:alternateName xml:lang="uk">Нансі</gn:alternateName>
+<gn:alternateName xml:lang="hy">Նանսի</gn:alternateName>
+<gn:alternateName xml:lang="ka">ნანსი</gn:alternateName>
+<gn:alternateName xml:lang="mr">नान्सी</gn:alternateName>
+<gn:alternateName xml:lang="hi">नांसी</gn:alternateName>
+<gn:alternateName xml:lang="zh">南锡</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM4"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>106318</gn:population>
+<wgs84_pos:lat>48.69278</wgs84_pos:lat>
+<wgs84_pos:long>6.18361</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/2990998/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentADM1 rdf:resource="http://sws.geonames.org/2997551/"/>
+<gn:parentADM2 rdf:resource="http://sws.geonames.org/2994111/"/>
+<gn:parentADM3 rdf:resource="http://sws.geonames.org/2990998/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/6454307/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/6454307/nancy.html"/>
+<gn:wikipediaArticle rdf:resource="http://en.wikipedia.org/wiki/Nancy%2C_France"/>
+<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Nancy%2C_France"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/commune/54395"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/6454307/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/6454307/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/6454307/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2007-04-01</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-05-10</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>

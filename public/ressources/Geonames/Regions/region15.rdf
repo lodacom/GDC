@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/3027257/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/3027257/about.rdf"/>
+<gn:name>Champagne-Ardenne</gn:name>
+<gn:alternateName xml:lang="ko">샹파뉴아르덴</gn:alternateName>
+<gn:alternateName xml:lang="eo">Ĉampanjo-Ardenoj</gn:alternateName>
+<gn:alternateName xml:lang="an">Campanya-Ardenas</gn:alternateName>
+<gn:alternateName xml:lang="frp">Champagne-Ardena</gn:alternateName>
+<gn:alternateName xml:lang="da">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="de">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="en">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="et">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="fi">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="fr">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="hr">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="hu">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="id">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="it">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="ms">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="nn">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="no">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="ro">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="sk">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="sv">Champagne-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="tr">Champagne-Ardenne</gn:alternateName>
+<gn:officialName>Champagne-Ardenne</gn:officialName>
+<gn:alternateName xml:lang="nl">Champagne-Ardennen</gn:alternateName>
+<gn:alternateName xml:lang="es">Champaña-Ardenas</gn:alternateName>
+<gn:alternateName xml:lang="oc">Champanha-Ardena</gn:alternateName>
+<gn:alternateName xml:lang="pt">Champanha-Ardenas</gn:alternateName>
+<gn:alternateName xml:lang="io">Champania Ardeni</gn:alternateName>
+<gn:alternateName xml:lang="lt">Šampanė-Ardėnai</gn:alternateName>
+<gn:alternateName xml:lang="sl">Šampanja-Ardeni</gn:alternateName>
+<gn:alternateName xml:lang="lad">Shampanya-Ardenne</gn:alternateName>
+<gn:alternateName xml:lang="pl">Szampania-Ardeny</gn:alternateName>
+<gn:alternateName xml:lang="ca">Xampanya-Ardenes</gn:alternateName>
+<gn:alternateName xml:lang="eu">Xanpaina-Ardena</gn:alternateName>
+<gn:alternateName xml:lang="ru">Шампань — Арденны</gn:alternateName>
+<gn:alternateName xml:lang="sr">Шампања-Ардени</gn:alternateName>
+<gn:alternateName xml:lang="ka">შამპან-არდენი</gn:alternateName>
+<gn:alternateName xml:lang="ja">シャンパーニュ＝アルデンヌ地域圏</gn:alternateName>
+<gn:alternateName xml:lang="zh">香槟-阿登</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM1"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>1339487</gn:population>
+<wgs84_pos:lat>49</wgs84_pos:lat>
+<wgs84_pos:long>4.5</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/3027257/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/3027257/region-champagne-ardenne.html"/>
+<gn:wikipediaArticle rdf:resource="http://en.wikipedia.org/wiki/Champagne-Ardenne"/>
+<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Champagne-Ardenne"/>
+<gn:wikipediaArticle rdf:resource="http://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%BC%D0%BF%D0%B0%D0%BD%D1%8C_%E2%80%94_%D0%90%D1%80%D0%B4%D0%B5%D0%BD%D0%BD%D1%8B"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/region/21"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/3027257/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/3027257/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/3027257/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-01-15</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-09-17</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>

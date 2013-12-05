@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/2985244/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/2985244/about.rdf"/>
+<gn:name>Provence-Alpes-Côte d'Azur</gn:name>
+<gn:alternateName xml:lang="ko">프로방스알프코트다쥐르</gn:alternateName>
+<gn:alternateName xml:lang="hr">Provansa-Alpe-Azurna obala</gn:alternateName>
+<gn:alternateName xml:lang="sl">Provansa-Alpe-Azurna obala</gn:alternateName>
+<gn:alternateName xml:lang="lt">Provansas-Alpės-Žydrasis Krantas</gn:alternateName>
+<gn:alternateName xml:lang="pt">Provença-Alpes-Costa Azul</gn:alternateName>
+<gn:alternateName xml:lang="ca">Provença – Alps – Costa Blava</gn:alternateName>
+<gn:alternateName xml:lang="oc">Provença-Aups-Còsta d'Azur</gn:alternateName>
+<gn:alternateName xml:lang="da">Provence-Alpes-Côte d'Azur</gn:alternateName>
+<gn:alternateName xml:lang="en">Provence-Alpes-Côte d'Azur</gn:alternateName>
+<gn:alternateName xml:lang="et">Provence-Alpes-Côte d'Azur</gn:alternateName>
+<gn:officialName xml:lang="fr">Provence-Alpes-Côte d'Azur</gn:officialName>
+<gn:alternateName xml:lang="id">Provence-Alpes-Côte d'Azur</gn:alternateName>
+<gn:alternateName xml:lang="lad">Provence-Alpes-Côte d'Azur</gn:alternateName>
+<gn:alternateName xml:lang="nl">Provence-Alpes-Côte d'Azur</gn:alternateName>
+<gn:alternateName xml:lang="nn">Provence-Alpes-Côte d'Azur</gn:alternateName>
+<gn:alternateName xml:lang="no">Provence-Alpes-Côte d'Azur</gn:alternateName>
+<gn:alternateName xml:lang="qu">Provence-Alpes-Côte d'Azur</gn:alternateName>
+<gn:alternateName xml:lang="sv">Provence-Alpes-Côte d'Azur</gn:alternateName>
+<gn:alternateName xml:lang="tr">Provence-Alpes-Côte d'Azur</gn:alternateName>
+<gn:officialName>Provence-Alpes-Côte d'Azur</gn:officialName>
+<gn:alternateName xml:lang="de">Provence-Alpes-Côte d’Azur</gn:alternateName>
+<gn:alternateName xml:lang="fi">Provence-Alpes-Côte d’Azur</gn:alternateName>
+<gn:alternateName xml:lang="hu">Provence-Alpes-Côte d’Azur</gn:alternateName>
+<gn:alternateName xml:lang="sk">Provence-Alpes-Côte d’Azur</gn:alternateName>
+<gn:alternateName xml:lang="frp">Provence-Arpes-Couta d’Azur</gn:alternateName>
+<gn:alternateName xml:lang="io">Provenco Alpi Azur-Rivo</gn:alternateName>
+<gn:alternateName xml:lang="eo">Provenco-Alpoj-Bordo Lazura</gn:alternateName>
+<gn:alternateName xml:lang="ro">Provența-Alpi-Coasta de Azur</gn:alternateName>
+<gn:alternateName xml:lang="eu">Proventza-Alpeak-Cote d'Azur</gn:alternateName>
+<gn:alternateName xml:lang="an">Provenza-Alpes-Costa Azul</gn:alternateName>
+<gn:alternateName xml:lang="es">Provenza-Alpes-Costa Azul</gn:alternateName>
+<gn:alternateName xml:lang="it">Provenza-Alpi-Costa Azzurra</gn:alternateName>
+<gn:alternateName xml:lang="pl">Prowansja-Alpy-Lazurowe Wybrzeże</gn:alternateName>
+<gn:alternateName xml:lang="scn">Pruvenza-Alpi-Costa Azzola</gn:alternateName>
+<gn:alternateName xml:lang="fr">Région PACA</gn:alternateName>
+<gn:alternateName xml:lang="he">פרובאנס-אלפ-קוט ד'אזור</gn:alternateName>
+<gn:alternateName xml:lang="sr">Прованса-Алпи-Азурна обала</gn:alternateName>
+<gn:alternateName xml:lang="bg">Прованс-Алпи-Лазурен бряг</gn:alternateName>
+<gn:alternateName xml:lang="ru">Прованс — Альпы — Лазурный Берег</gn:alternateName>
+<gn:alternateName xml:lang="ka">პროვანსი-ალპები-ლაჟვარდოვანი ნაპირი</gn:alternateName>
+<gn:alternateName xml:lang="ja">プロヴァンス＝アルプ＝コート・ダジュール地域圏</gn:alternateName>
+<gn:alternateName xml:lang="zh">普罗旺斯-阿尔卑斯-蓝色海岸</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM1"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>4864015</gn:population>
+<wgs84_pos:lat>44</wgs84_pos:lat>
+<wgs84_pos:long>6</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/2985244/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/2985244/region-provence-alpes-cote-d-azur.html"/>
+<gn:wikipediaArticle rdf:resource="http://en.wikipedia.org/wiki/Provence-Alpes-C%C3%B4te_d%27Azur"/>
+<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Provence-Alpes-C%C3%B4te_d%27Azur"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/region/93"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/2985244/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/2985244/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/2985244/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-01-15</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-09-17</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/3007670/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/3007670/about.rdf"/>
+<gn:name>Languedoc-Roussillon</gn:name>
+<gn:alternateName xml:lang="ko">랑그도크루시용</gn:alternateName>
+<gn:alternateName xml:lang="es">Languedoc-Rosellón</gn:alternateName>
+<gn:alternateName xml:lang="gl">Languedoc-Rosellón</gn:alternateName>
+<gn:alternateName xml:lang="af">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="da">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="de">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="en">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="et">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="eu">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="fi">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="fr">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="hr">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="hu">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="id">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="lb">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="ms">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="nl">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="nn">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="no">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="qu">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="ro">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="sk">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="sl">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="sv">Languedoc-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="tr">Languedoc-Roussillon</gn:alternateName>
+<gn:officialName>Languedoc-Roussillon</gn:officialName>
+<gn:alternateName xml:lang="pt">Languedoque-Rossilhão</gn:alternateName>
+<gn:alternateName xml:lang="eo">Langvedoko-Rusiljono</gn:alternateName>
+<gn:alternateName xml:lang="pl">Langwedocja-Roussillon</gn:alternateName>
+<gn:alternateName xml:lang="nrm">Laungue-d'Oc-et-Rouossilloun</gn:alternateName>
+<gn:alternateName xml:lang="oc">Lengadòc Rosselhon</gn:alternateName>
+<gn:alternateName xml:lang="oc">Lengadòc-Rosselhon</gn:alternateName>
+<gn:alternateName xml:lang="frp">Lengouadoc-Rosselyon</gn:alternateName>
+<gn:alternateName xml:lang="an">Lenguadoc-Rosellón</gn:alternateName>
+<gn:alternateName xml:lang="it">Linguadoca-Rossiglione</gn:alternateName>
+<gn:alternateName xml:lang="scn">Linguadoca-Russigghiuni</gn:alternateName>
+<gn:alternateName xml:lang="ia">Linguadoc-Rossellon</gn:alternateName>
+<gn:alternateName xml:lang="ca">Llenguadoc-Rosselló</gn:alternateName>
+<gn:alternateName xml:lang="la">Septimania</gn:alternateName>
+<gn:alternateName xml:lang="he">לנגדוק-רוסיון</gn:alternateName>
+<gn:alternateName xml:lang="sr">Лангдок-Русијон</gn:alternateName>
+<gn:alternateName xml:lang="ru">Лангедок — Руссильон</gn:alternateName>
+<gn:alternateName xml:lang="ka">ლანგედოკი-რუსილონი</gn:alternateName>
+<gn:alternateName xml:lang="ja">ラングドック＝ルシヨン地域圏</gn:alternateName>
+<gn:alternateName xml:lang="zh">朗格多克-鲁西永</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM1"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>2560870</gn:population>
+<wgs84_pos:lat>43.66667</wgs84_pos:lat>
+<wgs84_pos:long>3.16667</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/3007670/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/3007670/region-languedoc-roussillon.html"/>
+<gn:wikipediaArticle rdf:resource="http://en.wikipedia.org/wiki/Languedoc-Roussillon"/>
+<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Languedoc-Roussillon"/>
+<gn:wikipediaArticle rdf:resource="http://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B3%D0%B5%D0%B4%D0%BE%D0%BA_%E2%80%94_%D0%A0%D1%83%D1%81%D1%81%D0%B8%D0%BB%D1%8C%D0%BE%D0%BD"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/region/91"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/3007670/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/3007670/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/3007670/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-01-15</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-09-17</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<gn:Feature rdf:about="http://sws.geonames.org/6448047/">
+<rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/6448047/about.rdf"/>
+<gn:name>Brest</gn:name>
+<gn:alternateName xml:lang="ja">ブレスト</gn:alternateName>
+<gn:alternateName xml:lang="ko">브레스트</gn:alternateName>
+<gn:alternateName xml:lang="ta">பிரெஸ்ட்</gn:alternateName>
+<gn:alternateName xml:lang="bo">བེ་རེ་སི་ཊི།</gn:alternateName>
+<gn:alternateName xml:lang="oc">Brèst</gn:alternateName>
+<gn:alternateName xml:lang="lv">Bresta</gn:alternateName>
+<gn:alternateName xml:lang="lt">Brestas</gn:alternateName>
+<gn:alternateName xml:lang="la">Brestia</gn:alternateName>
+<gn:alternateName xml:lang="nn">Brest i Frankrike</gn:alternateName>
+<gn:alternateName xml:lang="fa">برست</gn:alternateName>
+<gn:alternateName xml:lang="mzn">برست</gn:alternateName>
+<gn:alternateName xml:lang="pnb">بریسٹ</gn:alternateName>
+<gn:alternateName xml:lang="ar">بريست</gn:alternateName>
+<gn:alternateName xml:lang="he">ברסט</gn:alternateName>
+<gn:alternateName xml:lang="el">Βρέστη</gn:alternateName>
+<gn:alternateName xml:lang="bg">Брест</gn:alternateName>
+<gn:alternateName xml:lang="kk">Брест</gn:alternateName>
+<gn:alternateName xml:lang="mk">Брест</gn:alternateName>
+<gn:alternateName xml:lang="ru">Брест</gn:alternateName>
+<gn:alternateName xml:lang="sr">Брест</gn:alternateName>
+<gn:alternateName xml:lang="uk">Брест</gn:alternateName>
+<gn:alternateName xml:lang="be">Горад Брэст</gn:alternateName>
+<gn:alternateName xml:lang="ka">ბრესტი</gn:alternateName>
+<gn:alternateName xml:lang="mr">ब्रेस्त</gn:alternateName>
+<gn:alternateName xml:lang="hi">ब्रैस्त</gn:alternateName>
+<gn:alternateName xml:lang="zh">布雷斯特</gn:alternateName>
+<gn:featureClass rdf:resource="http://www.geonames.org/ontology#A"/>
+<gn:featureCode rdf:resource="http://www.geonames.org/ontology#A.ADM4"/>
+<gn:countryCode>FR</gn:countryCode>
+<gn:population>141315</gn:population>
+<wgs84_pos:lat>48.39146</wgs84_pos:lat>
+<wgs84_pos:long>-4.48483</wgs84_pos:long>
+<gn:parentFeature rdf:resource="http://sws.geonames.org/3030299/"/>
+<gn:parentCountry rdf:resource="http://sws.geonames.org/3017382/"/>
+<gn:parentADM1 rdf:resource="http://sws.geonames.org/3030293/"/>
+<gn:parentADM2 rdf:resource="http://sws.geonames.org/3018471/"/>
+<gn:parentADM3 rdf:resource="http://sws.geonames.org/3030299/"/>
+<gn:childrenFeatures rdf:resource="http://sws.geonames.org/6448047/contains.rdf"/>
+<gn:locationMap rdf:resource="http://www.geonames.org/6448047/brest.html"/>
+<gn:wikipediaArticle rdf:resource="http://en.wikipedia.org/wiki/Brest%2C_France"/>
+<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Brest%2C_France"/>
+<gn:wikipediaArticle rdf:resource="http://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B5%D1%81%D1%82"/>
+<gn:wikipediaArticle rdf:resource="http://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B5%D1%81%D1%82_%28%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F%29"/>
+<gn:wikipediaArticle rdf:resource="http://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B5%D1%81%D1%82_%28%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%29"/>
+<owl:sameAs rdf:resource="http://id.insee.fr/geo/commune/29019"/>
+</gn:Feature>
+<foaf:Document rdf:about="http://sws.geonames.org/6448047/about.rdf">
+<foaf:primaryTopic rdf:resource="http://sws.geonames.org/6448047/"/>
+<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+<cc:attributionURL rdf:resource="http://sws.geonames.org/6448047/"/>
+<cc:attributionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoNames</cc:attributionName>
+<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2007-03-22</dcterms:created>
+<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-05-25</dcterms:modified>
+</foaf:Document>
+</rdf:RDF>
