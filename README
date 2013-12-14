@@ -1,4 +1,31 @@
-This is your new Play application
+GDC Project
 =====================================
+Notre projet profite pleinement des toutes les dernières technologies du marché. Tout d'abord notre
+application s'appuie sur le [framework Play v2.2.1](http://www.playframework.com). Il met en 
+place plusieurs types de persistences:
 
-This file will be packaged with your application, when using `play dist`.
+1. Nous utilisons [Oracle 12c Release 1 Entreprise Edition](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html)
+qui nous permet de mettre en place une <b>base de données de type relationnelle</b>. Cette dernière
+contient les données de [l'INSEE](http://www.insee.fr/fr/bases-de-donnees/) 
+et de l'ISF 2002 et 2008.
+
+2. Un <b>triple store de type TDB</b> est géré de façon interne à l'application grâce à [l'API Jena](http://jena.apache.org/).
+Ce dernier contient les coordonnées GPS récupérées de [Geonames](http://www.geonames.org/)
+de toutes les régions, de tous les départments et de certaines villes (les plus importantes).
+
+3. Une <b>base de données de type graphe</b> s'imbrique à cet eco-système. Nous avons choisi
+d'utiliser [Neo4J](http://www.neo4j.org/). Celle-ci contient pour chaque région, département et ville
+l'abstract donné par [DBPedia](http://dbpedia.org/About).
+
+4. Une <b>base de données de type colonne</b> vient s'ajouter pour compléter notre collection.
+Nous avons choisi d'utiliser [HBase](http://hbase.apache.org/).
+
+Objectif du projet
+------------------
+Fusionner toutes ces données hétéroclites pour délivrer un service à l'utilisateur. A travers
+ce projet nous voulons montrer l'évolution des flux des riches et la comparer l'évolution 
+des personnes qui persoivent le RSA donc des personnes dans la précarités. Toutes ces 
+données évidemment en fonction des régions, départements et villes.
+
+Détails techniques pour les développeurs
+----------------------------------------

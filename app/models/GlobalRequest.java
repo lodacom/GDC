@@ -1,8 +1,9 @@
 package models;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 
 import com.hp.hpl.jena.query.Query;
@@ -24,13 +25,14 @@ public class GlobalRequest {
 	private String region="PREFIX region: <http://www.gdcproject.fr/gdcproject/region/>";
 	private String impot="PREFIX impot: <http://www.gdcproject.fr/gdcproject/impot/>";
 	private String geonames = "PREFIX geonames: <http://www.geonames.org/ontology#>" ;
-    private String rdf = "PREFIX rdf: <"+RDF.getURI()+">" ;
-    private String skos = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>" ;
-    private String pos = "PREFIX pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>";
+	private String rdf = "PREFIX rdf: <"+RDF.getURI()+">" ;
+	private String skos = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>" ;
+	private String pos = "PREFIX pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>";
 	public Model m;
 	public OracleRequest or;
 	public TripleStoreRequest tsr;
-	
+	public NeoRequest neoR;
+
 	public GlobalRequest(){
 		m=ModelFactory.createDefaultModel();
 		or=new OracleRequest();
@@ -38,8 +40,14 @@ public class GlobalRequest {
 		tsr.consult();
 		m.add(or.d2rq);
 		m.add(tsr.tsr);
+		neoR=new NeoRequest();
+		File fich=new File(NeoRequest.neoProp);
+		if (fich.length()==0){
+			neoR.create();
+			ecrire(NeoRequest.neoProp, "neoRoot "+neoR.getNeoNodeId());
+		}
 	}
-	
+
 	public ResultSet request(String requete){
 		String request=cog + NL + departement + NL + region + NL + impot + NL + 
 				geonames + NL + rdf + NL + pos + NL + skos + requete;
@@ -48,15 +56,15 @@ public class GlobalRequest {
 		ResultSet recup=query.execSelect();
 		return recup;
 	}
-	
+
 	public ArrayList<String> cities(){
 		ArrayList<String> cities=new ArrayList<String>();
 		String request=
 				"SELECT ?communes "
-				+ "WHERE { "
-				+ "?num_commune cog_r:Cog_R_NccEnr ?communes . "
-				+" } "
-				+ "ORDER BY ASC(?communes)";
+						+ "WHERE { "
+						+ "?num_commune cog_r:Cog_R_NccEnr ?communes . "
+						+" } "
+						+ "ORDER BY ASC(?communes)";
 		ResultSet recup=request(request);
 		while(recup.hasNext()){
 			QuerySolution sol=(QuerySolution)recup.next();
@@ -65,7 +73,7 @@ public class GlobalRequest {
 		}
 		return cities;
 	}
-	
+
 	public ArrayList<String> regions(){
 		ArrayList<String> regions=new ArrayList<String>();
 		String request="SELECT ?region "
@@ -81,33 +89,33 @@ public class GlobalRequest {
 		}
 		return regions;
 	}
-	
+
 	public ArrayList<TownInformation> regions(String region){
 		ArrayList<TownInformation> regions=new ArrayList<TownInformation>();
-		
+
 		String request;
 		if (region!="regions"){
 			request="SELECT ?communes (SUM(?redev) AS ?nbre_redev) (AVG(?im) AS ?impot_moyen) (AVG(?pm) AS ?patrimoine_moyen) ?long ?lat ?pop "
-				+"WHERE { "
-				+"?num_commune cog_r:Cog_R_NccEnr ?communes . "
-				+"?num_reg region:Region_ChefLieu ?cheflieu . "
-				+"?num_commune cog_r:Cog_R_Insee ?code_insee . "
-				+"?num_reg region:Region_NccEnr ?region . "
-				+ "?i_codeinsee impot:Impot_Insee ?num_commune . "
-				+ "?i_codeinsee impot:Annee ?annee . "
-				+ "?i_codeinsee impot:ImpotMoyen ?im . "
-				+"?i_codeinsee impot:NbreRedevable ?redev . "
-				+ "?i_codeinsee impot:PatrimoineM ?pm . "
-				+ "?s geonames:featureCode ?c . "
-        		+ "?s geonames:name ?t  . "
-        		+ "?s geonames:population ?pop . "
-        		+ "?s pos:lat ?lat . "
-        		+ "?s pos:long ?long . "
-				+"FILTER (str(?cheflieu)=str(?code_insee)) ."
-				+ "FILTER (str(?region)=\""+region+"\") . "
-				+ "FILTER (regex(str(?c),\".*A.ADM4\") && str(?communes)=str(?t)) "
-				+"} "
-				+ "GROUP BY ?annee ?communes ?long ?lat ?pop ";
+					+"WHERE { "
+					+"?num_commune cog_r:Cog_R_NccEnr ?communes . "
+					+"?num_reg region:Region_ChefLieu ?cheflieu . "
+					+"?num_commune cog_r:Cog_R_Insee ?code_insee . "
+					+"?num_reg region:Region_NccEnr ?region . "
+					+ "?i_codeinsee impot:Impot_Insee ?num_commune . "
+					+ "?i_codeinsee impot:Annee ?annee . "
+					+ "?i_codeinsee impot:ImpotMoyen ?im . "
+					+"?i_codeinsee impot:NbreRedevable ?redev . "
+					+ "?i_codeinsee impot:PatrimoineM ?pm . "
+					+ "?s geonames:featureCode ?c . "
+					+ "?s geonames:name ?t  . "
+					+ "?s geonames:population ?pop . "
+					+ "?s pos:lat ?lat . "
+					+ "?s pos:long ?long . "
+					+"FILTER (str(?cheflieu)=str(?code_insee)) ."
+					+ "FILTER (str(?region)=\""+region+"\") . "
+					+ "FILTER (regex(str(?c),\".*A.ADM4\") && str(?communes)=str(?t)) "
+					+"} "
+					+ "GROUP BY ?annee ?communes ?long ?lat ?pop ";
 		}else{
 			request="SELECT ?communes (SUM(?redev) AS ?nbre_redev) (AVG(?im) AS ?impot_moyen) (AVG(?pm) AS ?patrimoine_moyen) ?lat ?long "
 					+"WHERE { "
@@ -138,13 +146,13 @@ public class GlobalRequest {
 			nbre_redev=nbre_redev.replaceAll("\\^.*", "");
 			impot_moyen=impot_moyen.replaceAll("\\^.*", "");
 			patrimoine_moyen=patrimoine_moyen.replaceAll("\\^.*", "");
-			
+
 			info=new TownInformation(region,Integer.parseInt(pop),commune, Integer.parseInt(nbre_redev), Float.parseFloat(impot_moyen), Float.parseFloat(patrimoine_moyen),Double.parseDouble(longitude),Double.parseDouble(latitude));
 			regions.add(info);
 		}
 		return regions;
 	}
-	
+
 	public ArrayList<String> departements(){
 		ArrayList<String> departements=new ArrayList<String>();
 		String request="SELECT ?departement "
@@ -160,7 +168,7 @@ public class GlobalRequest {
 		}
 		return departements;
 	}
-	
+
 	public ArrayList<TownInformation>departements(String departement){
 		ArrayList<TownInformation> departements=new ArrayList<TownInformation>();
 		String request="";
@@ -177,17 +185,17 @@ public class GlobalRequest {
 					+"?i_codeinsee impot:NbreRedevable ?redev . "
 					+ "?i_codeinsee impot:PatrimoineM ?pm . "
 					+ "?s geonames:featureCode ?c . "
-	        		+ "?s geonames:name ?t  . "
-	        		+ "?s geonames:population ?pop . "
-	        		+ "?s pos:lat ?lat . "
-	        		+ "?s pos:long ?long . "
+					+ "?s geonames:name ?t  . "
+					+ "?s geonames:population ?pop . "
+					+ "?s pos:lat ?lat . "
+					+ "?s pos:long ?long . "
 					+"FILTER (str(?cheflieu)=str(?code_insee)) ."
 					+ "FILTER (str(?region)=\""+departement+"\") . "
 					+ "FILTER (regex(str(?c),\".*A.ADM4\") && str(?communes)=str(?t)) "
 					+"} "
 					+ "GROUP BY ?annee ?communes ?long ?lat ?pop ";
 		}else{
-			
+
 		}
 		ResultSet recup=request(request);
 		TownInformation info;
@@ -203,10 +211,26 @@ public class GlobalRequest {
 			nbre_redev=nbre_redev.replaceAll("\\^.*", "");
 			impot_moyen=impot_moyen.replaceAll("\\^.*", "");
 			patrimoine_moyen=patrimoine_moyen.replaceAll("\\^.*", "");
-			
+
 			info=new TownInformation(departement,Integer.parseInt(pop),commune, Integer.parseInt(nbre_redev), Float.parseFloat(impot_moyen), Float.parseFloat(patrimoine_moyen),Double.parseDouble(longitude),Double.parseDouble(latitude));
 			departements.add(info);
 		}
 		return departements;
+	}
+
+	public void ecrire(String nomFic, String texte){
+		try{
+			FileWriter fw = new FileWriter(nomFic, false);
+			BufferedWriter output = new BufferedWriter(fw);
+
+			output.write(texte);
+			output.flush();
+			output.close();
+		}
+		catch(IOException ioe){
+			System.out.print("Erreur : ");
+			ioe.printStackTrace();
+		}
+
 	}
 }
