@@ -131,7 +131,7 @@ public class NeoRequest extends GlobalRequest {
 		}
 	}
 	
-	public void buildRegionsModel(){
+	public Model buildRegionsModel(){
 		Node regionNode=getRegionNode();
 		Traverser regionsTraverser=getRegions(regionNode);
 		//String output="";
@@ -145,28 +145,40 @@ public class NeoRequest extends GlobalRequest {
 					+"Résumé: "+regionPath.endNode().getProperty("abstract")+"\n";*/
 		}
 		//return output;
+		return m;
 	}
 	
-	public String printDepartement(){
+	public Model buildDepartementModel(){
 		Node departementNode=getDepartementNode();
 		Traverser departementsTraverser=getDepartements(departementNode);
-		String output="";
-		for (Path regionPath : departementsTraverser){
-			output+="Département: "+regionPath.endNode().getProperty("entity")+"\n"
-					+"Résumé: "+regionPath.endNode().getProperty("abstract")+"\n";
+		//String output="";
+		for (Path depPath : departementsTraverser){
+			NeoOntology.Departement=m.createResource(NeoOntology.getDepartement()+depPath.endNode().getProperty("entity"));
+			NeoOntology.Resume=m.createResource(NeoOntology.getDepartement()+depPath.endNode().getProperty("abstract"));
+			m.add(NeoOntology.Departement,RDF.type,NeoOntology.Departement);//TODO propriété à changer
+			m.add(NeoOntology.Departement,DC.description,NeoOntology.Resume);
+			
+			/*output+="Département: "+depPath.endNode().getProperty("entity")+"\n"
+					+"Résumé: "+depPath.endNode().getProperty("abstract")+"\n";*/
 		}
-		return output;
+		//return output;
+		return m;
 	}
 	
-	public String printVilles(){
+	public Model buildVillesModel(){
 		Node villeNode=getVilleNode();
 		Traverser villesTraverser=getVilles(villeNode);
-		String output="";
-		for (Path regionPath : villesTraverser){
-			output+="Ville: "+regionPath.endNode().getProperty("entity")+"\n"
-					+"Résumé: "+regionPath.endNode().getProperty("abstract")+"\n";
+		//String output="";
+		for (Path villePath : villesTraverser){
+			NeoOntology.Ville=m.createResource(NeoOntology.getVille()+villePath.endNode().getProperty("entity"));
+			NeoOntology.Resume=m.createResource(NeoOntology.getVille()+villePath.endNode().getProperty("abstract"));
+			m.add(NeoOntology.Ville,RDF.type,NeoOntology.Departement);//TODO propriété à changer
+			m.add(NeoOntology.Ville,DC.description,NeoOntology.Resume);
+			/*output+="Ville: "+villePath.endNode().getProperty("entity")+"\n"
+					+"Résumé: "+villePath.endNode().getProperty("abstract")+"\n";*/
 		}
-		return output;
+		//return output;
+		return m;
 	}
 	
 	private Node getRegionNode(){

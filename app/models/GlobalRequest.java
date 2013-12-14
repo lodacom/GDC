@@ -93,6 +93,8 @@ public class GlobalRequest {
 	public ArrayList<TownInformation> regions(String region){
 		ArrayList<TownInformation> regions=new ArrayList<TownInformation>();
 
+		neoR.buildRegionsModel();
+		
 		String request;
 		if (region!="regions"){
 			request="SELECT ?communes (SUM(?redev) AS ?nbre_redev) (AVG(?im) AS ?impot_moyen) (AVG(?pm) AS ?patrimoine_moyen) ?long ?lat ?pop "
