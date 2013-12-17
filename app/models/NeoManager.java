@@ -10,7 +10,7 @@ import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 public class NeoManager {
 
 	private static volatile NeoManager instance=null;
-	public GraphDatabaseService dataBase;
+	public GraphDatabaseService dataBase=null;
 	public final static String path="C:/Users/Lolo/Documents/Neo4j";
 	
 	private NeoManager(){

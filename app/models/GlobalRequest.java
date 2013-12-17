@@ -39,19 +39,24 @@ public class GlobalRequest {
 		m=ModelFactory.createDefaultModel();
 		or=new OracleRequest();
 		tsr=new TripleStoreRequest();
+		neoR=new NeoRequest();
 		//tsr.create();
 		tsr.consult();
 		m.add(or.d2rq);
 		m.add(tsr.tsr);
-		/*neoR=new NeoRequest();
 		File fich=new File(NeoRequest.neoProp);
 		if (fich.length()==0){
 			neoR.create();
 			ecrire(NeoRequest.neoProp, "neoRoot "+neoR.getNeoNodeId());
-		}*/
+		}
 	}
-
+	
+	public GlobalRequest(int index){
+		
+	}
+	
 	public void setRootNeoGraph(){
+	
 		Properties configFile = new Properties() {
 			private final static long serialVersionUID = 1L; {
 				try {
@@ -108,8 +113,8 @@ public class GlobalRequest {
 	public ArrayList<TownInformation> regions(String region){
 		ArrayList<TownInformation> regions=new ArrayList<TownInformation>();
 		
-		/*setRootNeoGraph();
-		m.add(neoR.buildRegionsModel());*/
+		setRootNeoGraph();
+		m.add(neoR.buildRegionsModel());
 		
 		String request;
 		if (region!="regions"){

@@ -17,7 +17,7 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.RDF;
 
-public class NeoRequest extends GlobalRequest {
+public class NeoRequest {
 
 	public final String NL = System.getProperty("line.separator");
 	public String service="http://dbpedia.org/sparql";
@@ -73,9 +73,10 @@ public class NeoRequest extends GlobalRequest {
 		neoM.addRelationship(matrix, departement, RelTypes.DEPARTEMENT_NODE);
 		neoM.addRelationship(matrix, ville, RelTypes.TOWN_NODE);
 		
-		ArrayList<String> regions=this.regions();
-		ArrayList<String> departements=this.departements();
-		ArrayList<String> cities=this.cities();
+		GlobalRequest gr=new GlobalRequest(0);
+		ArrayList<String> regions=gr.regions();
+		ArrayList<String> departements=gr.departements();
+		ArrayList<String> cities=gr.cities();
 		
 		for (String ville:cities){
 			searchAllEntities(ville, "ville");
@@ -138,7 +139,7 @@ public class NeoRequest extends GlobalRequest {
 		for (Path regionPath : regionsTraverser){
 			NeoOntology.Region=m.createResource(NeoOntology.getRegion()+regionPath.endNode().getProperty("entity"));
 			NeoOntology.Resume=m.createResource(NeoOntology.getRegion()+regionPath.endNode().getProperty("abstract"));
-			m.add(NeoOntology.Region,RDF.type,NeoOntology.Region);//TODO propriété à changer
+			m.add(NeoOntology.Region,NeoOntology.RegionProp,NeoOntology.Region);//TODO propriété à changer
 			m.add(NeoOntology.Region,DC.description,NeoOntology.Resume);
 			
 			/*output+="Region: "+regionPath.endNode().getProperty("entity")+"\n"
@@ -155,7 +156,7 @@ public class NeoRequest extends GlobalRequest {
 		for (Path depPath : departementsTraverser){
 			NeoOntology.Departement=m.createResource(NeoOntology.getDepartement()+depPath.endNode().getProperty("entity"));
 			NeoOntology.Resume=m.createResource(NeoOntology.getDepartement()+depPath.endNode().getProperty("abstract"));
-			m.add(NeoOntology.Departement,RDF.type,NeoOntology.Departement);//TODO propriété à changer
+			m.add(NeoOntology.Departement,NeoOntology.DepartementProp,NeoOntology.Departement);//TODO propriété à changer
 			m.add(NeoOntology.Departement,DC.description,NeoOntology.Resume);
 			
 			/*output+="Département: "+depPath.endNode().getProperty("entity")+"\n"
@@ -172,7 +173,7 @@ public class NeoRequest extends GlobalRequest {
 		for (Path villePath : villesTraverser){
 			NeoOntology.Ville=m.createResource(NeoOntology.getVille()+villePath.endNode().getProperty("entity"));
 			NeoOntology.Resume=m.createResource(NeoOntology.getVille()+villePath.endNode().getProperty("abstract"));
-			m.add(NeoOntology.Ville,RDF.type,NeoOntology.Departement);//TODO propriété à changer
+			m.add(NeoOntology.Ville,NeoOntology.VilleProp,NeoOntology.Departement);//TODO propriété à changer
 			m.add(NeoOntology.Ville,DC.description,NeoOntology.Resume);
 			/*output+="Ville: "+villePath.endNode().getProperty("entity")+"\n"
 					+"Résumé: "+villePath.endNode().getProperty("abstract")+"\n";*/
