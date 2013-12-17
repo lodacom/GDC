@@ -2,9 +2,11 @@ package models;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Properties;
 
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
@@ -37,17 +39,30 @@ public class GlobalRequest {
 		m=ModelFactory.createDefaultModel();
 		or=new OracleRequest();
 		tsr=new TripleStoreRequest();
+		//tsr.create();
 		tsr.consult();
 		m.add(or.d2rq);
 		m.add(tsr.tsr);
-		neoR=new NeoRequest();
+		/*neoR=new NeoRequest();
 		File fich=new File(NeoRequest.neoProp);
 		if (fich.length()==0){
 			neoR.create();
 			ecrire(NeoRequest.neoProp, "neoRoot "+neoR.getNeoNodeId());
-		}
+		}*/
 	}
 
+	public void setRootNeoGraph(){
+		Properties configFile = new Properties() {
+			private final static long serialVersionUID = 1L; {
+				try {
+					load(new FileInputStream(NeoRequest.neoProp));
+				} catch (Exception e) {}
+			}
+		};
+		String rootId=configFile.getProperty("neoRoot");
+		neoR.setNeoNodeId(Integer.parseInt(rootId));
+	}
+	
 	public ResultSet request(String requete){
 		String request=cog + NL + departement + NL + region + NL + impot + NL + 
 				geonames + NL + rdf + NL + pos + NL + skos + requete;
@@ -92,8 +107,9 @@ public class GlobalRequest {
 
 	public ArrayList<TownInformation> regions(String region){
 		ArrayList<TownInformation> regions=new ArrayList<TownInformation>();
-
-		neoR.buildRegionsModel();
+		
+		/*setRootNeoGraph();
+		m.add(neoR.buildRegionsModel());*/
 		
 		String request;
 		if (region!="regions"){
@@ -173,6 +189,10 @@ public class GlobalRequest {
 
 	public ArrayList<TownInformation>departements(String departement){
 		ArrayList<TownInformation> departements=new ArrayList<TownInformation>();
+		
+		/*setRootNeoGraph();
+		m.add(neoR.buildDepartementModel());*/
+		
 		String request="";
 		if (departement!="departements"){
 			request="SELECT ?communes (SUM(?redev) AS ?nbre_redev) (AVG(?im) AS ?impot_moyen) (AVG(?pm) AS ?patrimoine_moyen) ?long ?lat ?pop "
