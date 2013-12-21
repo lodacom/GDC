@@ -17,7 +17,7 @@ public class TripleStoreRequest
 	public static final String rdf_file_3 = "public/ressources/geonames_v3.rdf";
 	public static final String repertoire = "public/ressources/Geonames/Villes";
 	public static final String directory = "public/ressources/GeoDatabase" ;
-	//C:/Users/Lolo/Documents/GeoDatabase  public/ressources/GeoDatabase
+
 	public Model tsr;
 
 	public TripleStoreRequest()

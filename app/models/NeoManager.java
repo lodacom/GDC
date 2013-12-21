@@ -10,10 +10,11 @@ import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 public class NeoManager {
 
 	private static volatile NeoManager instance=null;
-	public GraphDatabaseService dataBase=null;
+	public GraphDatabaseService dataBase;
 	public final static String path="C:/Users/Lolo/Documents/Neo4j";
 	
 	private NeoManager(){
+		deleteFileOrDirectory(new File(path));
 		dataBase = new GraphDatabaseFactory().newEmbeddedDatabase(path);
 		registerShutdownHook();
 	}

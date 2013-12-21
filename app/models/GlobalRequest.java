@@ -16,6 +16,7 @@ import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.RDF;
 
 public class GlobalRequest {
@@ -30,6 +31,9 @@ public class GlobalRequest {
 	private String rdf = "PREFIX rdf: <"+RDF.getURI()+">" ;
 	private String skos = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>" ;
 	private String pos = "PREFIX pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>";
+	private String neo="PREFIX neo: <http://www.neo4j.org/>";
+	private String dc="PREFIX dc: <"+DC.getURI()+">";
+	
 	public Model m;
 	public OracleRequest or;
 	public TripleStoreRequest tsr;
@@ -40,15 +44,9 @@ public class GlobalRequest {
 		or=new OracleRequest();
 		tsr=new TripleStoreRequest();
 		neoR=new NeoRequest();
-		//tsr.create();
 		tsr.consult();
 		m.add(or.d2rq);
 		m.add(tsr.tsr);
-		File fich=new File(NeoRequest.neoProp);
-		if (fich.length()==0){
-			neoR.create();
-			ecrire(NeoRequest.neoProp, "neoRoot "+neoR.getNeoNodeId());
-		}
 	}
 	
 	public GlobalRequest(int index){
@@ -70,7 +68,7 @@ public class GlobalRequest {
 	
 	public ResultSet request(String requete){
 		String request=cog + NL + departement + NL + region + NL + impot + NL + 
-				geonames + NL + rdf + NL + pos + NL + skos + requete;
+				geonames + NL + rdf + NL + pos + NL + skos + neo + NL + dc + requete;
 		Query qu=QueryFactory.create(request);
 		query=QueryExecutionFactory.create(qu,m);
 		ResultSet recup=query.execSelect();
@@ -243,21 +241,5 @@ public class GlobalRequest {
 			departements.add(info);
 		}
 		return departements;
-	}
-
-	public void ecrire(String nomFic, String texte){
-		try{
-			FileWriter fw = new FileWriter(nomFic, false);
-			BufferedWriter output = new BufferedWriter(fw);
-
-			output.write(texte);
-			output.flush();
-			output.close();
-		}
-		catch(IOException ioe){
-			System.out.print("Erreur : ");
-			ioe.printStackTrace();
-		}
-
 	}
 }
