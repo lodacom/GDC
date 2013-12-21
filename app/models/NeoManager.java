@@ -14,7 +14,7 @@ public class NeoManager {
 	public final static String path="C:/Users/Lolo/Documents/Neo4j";
 	
 	private NeoManager(){
-		deleteFileOrDirectory(new File(path));
+		//deleteFileOrDirectory(new File(path));
 		dataBase = new GraphDatabaseFactory().newEmbeddedDatabase(path);
 		registerShutdownHook();
 	}

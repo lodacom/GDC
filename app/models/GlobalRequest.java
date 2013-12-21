@@ -50,7 +50,7 @@ public class GlobalRequest {
 	}
 	
 	public GlobalRequest(int index){
-		
+		m=ModelFactory.createDefaultModel();
 	}
 	
 	public void setRootNeoGraph(){
@@ -121,7 +121,7 @@ public class GlobalRequest {
 					+"?num_commune cog_r:Cog_R_NccEnr ?communes . "
 					+"?num_reg region:Region_ChefLieu ?cheflieu . "
 					+"?num_commune cog_r:Cog_R_Insee ?code_insee . "
-					+"?num_reg region:Region_NccEnr ?region . "
+					+"?num_reg region:Region_NccEnr \""+region+"\" . "
 					+ "?i_codeinsee impot:Impot_Insee ?num_commune . "
 					+ "?i_codeinsee impot:Annee ?annee . "
 					+ "?i_codeinsee impot:ImpotMoyen ?im . "
@@ -132,8 +132,9 @@ public class GlobalRequest {
 					+ "?s geonames:population ?pop . "
 					+ "?s pos:lat ?lat . "
 					+ "?s pos:long ?long . "
+					//+ "?n neo:regionProp \""+region+"\" . "
+					//+ "?n dc:description ?abstract . "
 					+"FILTER (str(?cheflieu)=str(?code_insee)) ."
-					+ "FILTER (str(?region)=\""+region+"\") . "
 					+ "FILTER (regex(str(?c),\".*A.ADM4\") && str(?communes)=str(?t)) "
 					+"} "
 					+ "GROUP BY ?annee ?communes ?long ?lat ?pop ";
@@ -164,6 +165,7 @@ public class GlobalRequest {
 			String longitude=sol.get("?long").toString();
 			String latitude=sol.get("?lat").toString();
 			String pop=sol.get("?pop").toString();
+			//String resume=sol.get("?abstract").toString();
 			nbre_redev=nbre_redev.replaceAll("\\^.*", "");
 			impot_moyen=impot_moyen.replaceAll("\\^.*", "");
 			patrimoine_moyen=patrimoine_moyen.replaceAll("\\^.*", "");
@@ -198,12 +200,12 @@ public class GlobalRequest {
 		
 		String request="";
 		if (departement!="departements"){
-			request="SELECT ?communes (SUM(?redev) AS ?nbre_redev) (AVG(?im) AS ?impot_moyen) (AVG(?pm) AS ?patrimoine_moyen) ?long ?lat ?pop "
+			request="SELECT ?communes (SUM(?redev) AS ?nbre_redev) (AVG(?im) AS ?impot_moyen) (AVG(?pm) AS ?patrimoine_moyen) ?long ?lat ?pop ?abstract "
 					+"WHERE { "
 					+"?num_commune cog_r:Cog_R_NccEnr ?communes . "
 					+"?num_reg departement:Departement_ChefLieu ?cheflieu . "
 					+"?num_commune cog_r:Cog_R_Insee ?code_insee . "
-					+"?num_reg departement:Departement_NccEnr ?region . "
+					+"?num_reg departement:Departement_NccEnr \""+departement+"\" . "
 					+ "?i_codeinsee impot:Impot_Insee ?num_commune . "
 					+ "?i_codeinsee impot:Annee ?annee . "
 					+ "?i_codeinsee impot:ImpotMoyen ?im . "
@@ -214,11 +216,13 @@ public class GlobalRequest {
 					+ "?s geonames:population ?pop . "
 					+ "?s pos:lat ?lat . "
 					+ "?s pos:long ?long . "
+					+ "?n neo:departementProp \""+departement+"\" . "
+					+ "?n dc:description ?abstract . "
 					+"FILTER (str(?cheflieu)=str(?code_insee)) ."
-					+ "FILTER (str(?region)=\""+departement+"\") . "
+					//+ "FILTER (str(?region)=\""+departement+"\") . "
 					+ "FILTER (regex(str(?c),\".*A.ADM4\") && str(?communes)=str(?t)) "
 					+"} "
-					+ "GROUP BY ?annee ?communes ?long ?lat ?pop ";
+					+ "GROUP BY ?annee ?communes ?long ?lat ?pop ?abstract ";
 		}else{
 
 		}
@@ -233,6 +237,7 @@ public class GlobalRequest {
 			String longitude=sol.get("?long").toString();
 			String latitude=sol.get("?lat").toString();
 			String pop=sol.get("?pop").toString();
+			String resume=sol.get("?abstract").toString();
 			nbre_redev=nbre_redev.replaceAll("\\^.*", "");
 			impot_moyen=impot_moyen.replaceAll("\\^.*", "");
 			patrimoine_moyen=patrimoine_moyen.replaceAll("\\^.*", "");

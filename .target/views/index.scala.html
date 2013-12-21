@@ -2,6 +2,11 @@
 
 @main("Accueil") {
 	<div id="map" style="width: 600px; height: 400px"></div>
+	<div id="abstract">
+	@if(infoRegion!=null){
+		infoRegion.get(0).abstract
+	}
+	</div>
 	<form method="post" action="">
 		<label id="region">Régions:</label>
 		<select name="regions" id="regions">

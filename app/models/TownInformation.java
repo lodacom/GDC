@@ -10,6 +10,7 @@ public class TownInformation {
 	public double longitude;
 	public double latitude;
 	public int population;
+	public String resume;
 	
 	public TownInformation(String entite,int population,String nom_commune,int nbre_redev,float impot_moyen,float patrimoine,double longitude,double latitude){
 		this.entite=entite;
