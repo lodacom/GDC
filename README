@@ -29,3 +29,15 @@ données évidemment en fonction des régions, départements et villes.
 
 Détails techniques pour les développeurs
 ----------------------------------------
+Si vous voulez tester notre projet, il faut évidemment installer tous les logiciels cités plus haut. De plus, et 
+en particulier pour Neo4J, un jeu de données a été prévu pour pouvoir effectuer ces tests. Pour se faire 
+vous devez construir un nouveau projet. Puis copier les trois fichiers présents dans /public/util dans le 
+projet que vous venez de créer. Si vous avez déjà des données dans Neo4J ne décommenter pas la ligne n°17 dans 
+la classe NeoManager, par contre si vous ne tenez pas à vos données présentes décommenter cette ligne et 
+changer le path. Ensuite ceci fait, exécuter la classe Test qui contient un main, ce dernier va insérer les données
+des régions (si vous voulez insérer plus de données il vous suffit de décommenter les lignes appropriées à partir
+du n°69 dans la classe Test) et générer un fichier neo.properties. Vous devez <b>absolument</b> copier ce fichier dans 
+/public/ressources (il permettra par la suite de retrouver la racine de l'arborescence).
+Pourquoi vous ne pouvez pas exécuter Test depuis notre projet? En effet la question se pose. Il se trouve que les jars
+présents dans les imports rentrent en conflits en ce qui concerne l'insertion, c'est pourquoi vous devez créer un 
+projet à part.

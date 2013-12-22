@@ -1,12 +1,12 @@
-@(regions: List[String],departements: List[String],villes: List[String],infoRegion: List[TownInformation])
+@(regions: List[String],departements: List[String],villes: List[String],infoRegion: List[EntityInformation])
 
 @main("Accueil") {
 	<div id="map" style="width: 600px; height: 400px"></div>
-	<div id="abstract">
 	@if(infoRegion!=null){
-		infoRegion.get(0).abstract
+		<div id="abstract">
+		@infoRegion.get(0).getAbstract()
+		</div>
 	}
-	</div>
 	<form method="post" action="">
 		<label id="region">Régions:</label>
 		<select name="regions" id="regions">
@@ -49,8 +49,14 @@
       		if(typeof response == 'string') alert(response);
       		//CAS NORMAL
       		else{  
-      			var marker = L.marker([response[0].latitude , response[0].longitude]).addTo(map);
-      			marker.bindPopup("<b>Nom de l'entité: </b>"+response[0].entite+"<br/><b>Nom du chef-lieu/ville: </b>"+response[0].nom_commune+"</br>Nombre d'habitants :"+response[0].population+"<br/>"+"Nombre de redevables à l'ISF 2002: "+response[0].nbre_redev+"<br/>"+"Nombre de redevables à l'ISF 2008: "+response[1].nbre_redev+"<br/>"+"Impot moyen 2002: "+response[0].impot_moyen+"<br/>"+"Impot moyen 2008: "+response[1].impot_moyen+"<br/>"+"Patrimoine moyen 2002: "+response[0].patrimoine_moyen+"<br/>"+"Patrimoine moyen 2008: "+response[1].patrimoine_moyen+"<br/>");
+      			var marker = L.marker([response[0].gInfo.latitude , response[0].gInfo.longitude]).addTo(map);
+      			marker.bindPopup("<b>Nom de l'entité: </b>"+response[0].isfInfo.entite+"<br/><b>Nom du chef-lieu/ville: </b>"
+      	      			+response[0].isfInfo.nom_commune+"</br>Nombre d'habitants :"+response[0].gInfo.population+"<br/>"
+      	      			+"Nombre de redevables à l'ISF 2002: "+response[0].isfInfo.nbre_redev+"<br/>"
+      	      			+"Nombre de redevables à l'ISF 2008: "+response[1].isfInfo.nbre_redev+"<br/>"
+      	      			+"Impot moyen 2002: "+response[0].isfInfo.impot_moyen+"<br/>"
+      	      			+"Impot moyen 2008: "+response[1].isfInfo.impot_moyen+"<br/>"
+      	      			+"Patrimoine moyen 2002: "+response[0].isfInfo.patrimoine_moyen+"<br/>");
       		}
 			});
 	</script>

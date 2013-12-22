@@ -1,10 +1,6 @@
 package models;
 
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
 
@@ -51,6 +47,8 @@ public class GlobalRequest {
 	
 	public GlobalRequest(int index){
 		m=ModelFactory.createDefaultModel();
+		or=new OracleRequest();
+		m.add(or.d2rq);
 	}
 	
 	public void setRootNeoGraph(){
@@ -108,15 +106,15 @@ public class GlobalRequest {
 		return regions;
 	}
 
-	public ArrayList<TownInformation> regions(String region){
-		ArrayList<TownInformation> regions=new ArrayList<TownInformation>();
+	public ArrayList<EntityInformation> regions(String region){
+		ArrayList<EntityInformation> regions=new ArrayList<EntityInformation>();
 		
 		setRootNeoGraph();
 		m.add(neoR.buildRegionsModel());
 		
 		String request;
 		if (region!="regions"){
-			request="SELECT ?communes (SUM(?redev) AS ?nbre_redev) (AVG(?im) AS ?impot_moyen) (AVG(?pm) AS ?patrimoine_moyen) ?long ?lat ?pop "
+			request="SELECT ?communes (SUM(?redev) AS ?nbre_redev) (AVG(?im) AS ?impot_moyen) (AVG(?pm) AS ?patrimoine_moyen) ?long ?lat ?pop ?abstract "
 					+"WHERE { "
 					+"?num_commune cog_r:Cog_R_NccEnr ?communes . "
 					+"?num_reg region:Region_ChefLieu ?cheflieu . "
@@ -132,12 +130,13 @@ public class GlobalRequest {
 					+ "?s geonames:population ?pop . "
 					+ "?s pos:lat ?lat . "
 					+ "?s pos:long ?long . "
-					//+ "?n neo:regionProp \""+region+"\" . "
-					//+ "?n dc:description ?abstract . "
+					+ "?n neo:regionProp ?region . "
+					+ "?n dc:description ?abstract . "
+					+ "FILTER regex(str(?region),\""+region+"\") . "
 					+"FILTER (str(?cheflieu)=str(?code_insee)) ."
 					+ "FILTER (regex(str(?c),\".*A.ADM4\") && str(?communes)=str(?t)) "
 					+"} "
-					+ "GROUP BY ?annee ?communes ?long ?lat ?pop ";
+					+ "GROUP BY ?annee ?communes ?long ?lat ?pop ?abstract ";
 		}else{
 			request="SELECT ?communes (SUM(?redev) AS ?nbre_redev) (AVG(?im) AS ?impot_moyen) (AVG(?pm) AS ?patrimoine_moyen) ?lat ?long "
 					+"WHERE { "
@@ -155,7 +154,7 @@ public class GlobalRequest {
 					+ "GROUP BY (?annee)";
 		}
 		ResultSet recup=request(request);
-		TownInformation info;
+		EntityInformation info;
 		while(recup.hasNext()){
 			QuerySolution sol=(QuerySolution)recup.next();
 			String commune=sol.get("?communes").toString();
@@ -165,12 +164,15 @@ public class GlobalRequest {
 			String longitude=sol.get("?long").toString();
 			String latitude=sol.get("?lat").toString();
 			String pop=sol.get("?pop").toString();
-			//String resume=sol.get("?abstract").toString();
+			String resume=sol.get("?abstract").toString();
 			nbre_redev=nbre_redev.replaceAll("\\^.*", "");
 			impot_moyen=impot_moyen.replaceAll("\\^.*", "");
 			patrimoine_moyen=patrimoine_moyen.replaceAll("\\^.*", "");
 
-			info=new TownInformation(region,Integer.parseInt(pop),commune, Integer.parseInt(nbre_redev), Float.parseFloat(impot_moyen), Float.parseFloat(patrimoine_moyen),Double.parseDouble(longitude),Double.parseDouble(latitude));
+			ISFInformation isfInfo=new ISFInformation(region, commune, Integer.parseInt(nbre_redev), Float.parseFloat(impot_moyen),Float.parseFloat(patrimoine_moyen));
+			GeonamesInformation gInfo=new GeonamesInformation(Integer.parseInt(pop), Double.parseDouble(longitude),Double.parseDouble(latitude));
+			NeoInformation nInfo=new NeoInformation(resume);
+			info=new EntityInformation(isfInfo,gInfo,nInfo);
 			regions.add(info);
 		}
 		return regions;
@@ -192,8 +194,8 @@ public class GlobalRequest {
 		return departements;
 	}
 
-	public ArrayList<TownInformation>departements(String departement){
-		ArrayList<TownInformation> departements=new ArrayList<TownInformation>();
+	public ArrayList<EntityInformation>departements(String departement){
+		ArrayList<EntityInformation> departements=new ArrayList<EntityInformation>();
 		
 		/*setRootNeoGraph();
 		m.add(neoR.buildDepartementModel());*/
@@ -219,7 +221,6 @@ public class GlobalRequest {
 					+ "?n neo:departementProp \""+departement+"\" . "
 					+ "?n dc:description ?abstract . "
 					+"FILTER (str(?cheflieu)=str(?code_insee)) ."
-					//+ "FILTER (str(?region)=\""+departement+"\") . "
 					+ "FILTER (regex(str(?c),\".*A.ADM4\") && str(?communes)=str(?t)) "
 					+"} "
 					+ "GROUP BY ?annee ?communes ?long ?lat ?pop ?abstract ";
@@ -227,7 +228,7 @@ public class GlobalRequest {
 
 		}
 		ResultSet recup=request(request);
-		TownInformation info;
+		EntityInformation info;
 		while(recup.hasNext()){
 			QuerySolution sol=(QuerySolution)recup.next();
 			String commune=sol.get("?communes").toString();
@@ -242,7 +243,10 @@ public class GlobalRequest {
 			impot_moyen=impot_moyen.replaceAll("\\^.*", "");
 			patrimoine_moyen=patrimoine_moyen.replaceAll("\\^.*", "");
 
-			info=new TownInformation(departement,Integer.parseInt(pop),commune, Integer.parseInt(nbre_redev), Float.parseFloat(impot_moyen), Float.parseFloat(patrimoine_moyen),Double.parseDouble(longitude),Double.parseDouble(latitude));
+			ISFInformation isfInfo=new ISFInformation(departement, commune, Integer.parseInt(nbre_redev), Float.parseFloat(impot_moyen),Float.parseFloat(patrimoine_moyen));
+			GeonamesInformation gInfo=new GeonamesInformation(Integer.parseInt(pop), Double.parseDouble(longitude),Double.parseDouble(latitude));
+			NeoInformation nInfo=new NeoInformation(resume);
+			info=new EntityInformation(isfInfo,gInfo,nInfo);
 			departements.add(info);
 		}
 		return departements;

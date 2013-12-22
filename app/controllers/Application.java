@@ -4,7 +4,7 @@ import java.util.*;
 
 import models.GlobalRequest;
 import models.SearchForm;
-import models.TownInformation;
+import models.EntityInformation;
 import play.*;
 import play.data.Form;
 import play.libs.Json;
@@ -14,7 +14,7 @@ import views.html.*;
 public class Application extends Controller {
 
 	static Form<SearchForm> formulaire=Form.form(SearchForm.class);
-	static List<TownInformation> infoEntites=null;
+	static List<EntityInformation> infoEntites=null;
 	
 	public static Result index() {
 		GlobalRequest gr=new GlobalRequest();
@@ -22,7 +22,7 @@ public class Application extends Controller {
 		List<String> departements=gr.departements();
 		List<String> villes=gr.cities();
 
-		List<TownInformation> infoRegions=null;
+		List<EntityInformation> infoRegions=null;
 		return ok(index.render(regions,departements,villes,infoRegions));
 	}
 
