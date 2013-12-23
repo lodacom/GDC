@@ -5,11 +5,13 @@ public class EntityInformation {
 	public ISFInformation isfInfo;
 	public GeonamesInformation gInfo;
 	public NeoInformation nInfo;
+	public HBaseInformation hInfo;
 	
-	public EntityInformation(ISFInformation isfInfo,GeonamesInformation gInfo,NeoInformation nInfo){
+	public EntityInformation(ISFInformation isfInfo,GeonamesInformation gInfo,NeoInformation nInfo,HBaseInformation hInfo){
 		this.isfInfo=isfInfo;
 		this.gInfo=gInfo;
 		this.nInfo=nInfo;
+		this.hInfo=hInfo;
 	}
 	
 	public String toString(){
@@ -25,5 +27,13 @@ public class EntityInformation {
 	
 	public String getAbstract(){
 		return nInfo.resume;
+	}
+	
+	public int getRSA2009(){
+		return hInfo.rsa_2009;
+	}
+	
+	public int getRSA2010(){
+		return hInfo.rsa_2010;
 	}
 }

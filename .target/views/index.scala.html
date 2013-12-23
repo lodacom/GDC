@@ -4,7 +4,11 @@
 	<div id="map" style="width: 600px; height: 400px"></div>
 	@if(infoRegion!=null){
 		<div id="abstract">
-		@infoRegion.get(0).getAbstract()
+		@infoRegion.get(0).getAbstract()<br/>
+		</div>
+		<div id="rsa">
+		@infoRegion.get(0).getRSA2009()<br/>
+		@infoRegion.get(0).getRSA2010()<br/>
 		</div>
 	}
 	<form method="post" action="">

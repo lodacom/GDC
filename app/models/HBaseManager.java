@@ -6,6 +6,8 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.HColumnDescriptor;
 import org.apache.hadoop.hbase.HTableDescriptor;
+import org.apache.hadoop.hbase.MasterNotRunningException;
+import org.apache.hadoop.hbase.ZooKeeperConnectionException;
 import org.apache.hadoop.hbase.client.HBaseAdmin;
 import org.apache.hadoop.hbase.client.HTable;
 import org.apache.hadoop.hbase.client.Put;
@@ -48,6 +50,22 @@ public class HBaseManager {
 			System.out.println("insert recored " + rowKey + " to table "
 					+ tableName + " ok.");
 		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void deleteTables(String tableName){
+		try {
+			HBaseAdmin admin = new HBaseAdmin(conf);
+			admin.disableTable(tableName);
+			admin.deleteTable(tableName);
+			System.out.println("delete table " + tableName + " ok.");
+		} catch (MasterNotRunningException e) {
+			e.printStackTrace();
+		} catch (ZooKeeperConnectionException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
