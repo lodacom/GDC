@@ -1,0 +1,31 @@
+@main("EndPoint SPARQL") {
+<h1>Virtuoso SPARQL Query Editor</h1>
+<div>
+	<a href="#">About</a>|
+	<a href="#">Namespace prefixes</a>|
+	<a href="#">Inference rules</a>
+</div>
+<form method="get" action="/sparql/response">
+	<fieldset>
+		<label for="query">Query Text</label><br>
+		<textarea rows="18" cols="80" name="query" id="query">select distinct * where {?s rdfs:label ?l} LIMIT 100
+		</textarea>
+		<br><br>
+		<br>
+		<label for="format" class="n">Results Format</label>
+		<select name="format" id="format" onchange="format_change(this)">
+			<option value="auto">Auto</option>
+			<option value="text/html" selected="selected">HTML</option>
+			<option value="application/sparql-results+json">JSON</option>
+			<option value="application/rdf+xml">RDF/XML</option>
+		</select>
+		<br>
+		</fieldset>
+		<br>
+		<span class="info"><i>(The result can only be sent back to browser, not saved on the server, see <a href="/sparql?help=enable_det">details</a>)</i></span>
+		<br>
+		<br>
+		<input type="submit" value="Run Query">
+		<input type="reset" value="Reset">
+	</form>
+}
