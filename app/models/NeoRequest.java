@@ -16,7 +16,7 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.vocabulary.DC;
 
 public class NeoRequest {
-	
+
 	public final String prefix="http://neo4j.org#";
 	public final String neo="http://neo4j.org";
 	public final String isLink="isLink";
@@ -25,7 +25,7 @@ public class NeoRequest {
 	private Model m;
 	public static final String neoProp = "public/ressources/neo.properties";
 	public GraphDatabaseService gds;
-	
+
 	public static enum RelTypes implements RelationshipType{
 		REGION_NODE,
 		DEPARTEMENT_NODE,
@@ -52,7 +52,7 @@ public class NeoRequest {
 	public void setNeoNodeId(long neoNodeId) {
 		this.neoNodeId = neoNodeId;
 	}
-	
+
 	public Model buildRegionsModel(String region){
 		Node regionNode=getRegionNode();
 		Traverser regionsTraverser=getRegions(regionNode);
@@ -69,7 +69,7 @@ public class NeoRequest {
 		}
 		return m;
 	}
-	
+
 	public Model buildDepartementModel(String departement){
 		Node departementNode=getDepartementNode();
 		Traverser departementsTraverser=getDepartements(departementNode);
@@ -86,7 +86,7 @@ public class NeoRequest {
 		}
 		return m;
 	}
-	
+
 	public Model buildVillesModel(String ville){
 		Node villeNode=getVilleNode();
 		Traverser villesTraverser=getVilles(villeNode);
@@ -102,13 +102,36 @@ public class NeoRequest {
 		}
 		return m;
 	}
-	
+
+	public Model buildAllModel(){
+		Node departementNode=getDepartementNode();
+		Traverser departementsTraverser=getDepartements(departementNode);
+
+		for (Path depPath : departementsTraverser){
+			NeoOntology.Departement=m.createResource(depPath.endNode().getProperty("entity").toString());
+			NeoOntology.Resume=m.createResource(depPath.endNode().getProperty("abstract").toString());
+			m.add(NeoOntology.Departement,NeoOntology.DepartementProp,NeoOntology.Departement);
+			m.add(NeoOntology.Departement,DC.description,NeoOntology.Resume);
+		}
+
+		Node regionNode=getRegionNode();
+		Traverser regionsTraverser=getRegions(regionNode);
+		for (Path regionPath : regionsTraverser){
+			NeoOntology.Region=m.createResource(regionPath.endNode().getProperty("entity").toString());
+			NeoOntology.Resume=m.createResource(regionPath.endNode().getProperty("abstract").toString());
+			m.add(NeoOntology.Region,NeoOntology.RegionProp,NeoOntology.Region);
+			m.add(NeoOntology.Region,DC.description,NeoOntology.Resume);
+		}
+
+		return m;
+	}
+
 	private Node getRegionNode(){
 		return gds.getNodeById(neoNodeId)
 				.getSingleRelationship(RelTypes.REGION_NODE, Direction.OUTGOING)
 				.getEndNode();
 	}
-	
+
 	private Traverser getRegions(Node region){
 		TraversalDescription td=Traversal.description()
 				.breadthFirst()
@@ -116,13 +139,13 @@ public class NeoRequest {
 				.evaluator(Evaluators.excludeStartPosition());
 		return td.traverse(region);
 	}
-	
+
 	private Node getDepartementNode(){
 		return gds.getNodeById(neoNodeId)
 				.getSingleRelationship(RelTypes.DEPARTEMENT_NODE, Direction.OUTGOING)
 				.getEndNode();
 	}
-	
+
 	private Traverser getDepartements(Node departement){
 		TraversalDescription td=Traversal.description()
 				.breadthFirst()
@@ -130,13 +153,13 @@ public class NeoRequest {
 				.evaluator(Evaluators.excludeStartPosition());
 		return td.traverse(departement);
 	}
-	
+
 	private Node getVilleNode(){
 		return gds.getNodeById(neoNodeId)
 				.getSingleRelationship(RelTypes.TOWN_NODE, Direction.OUTGOING)
 				.getEndNode(); 
 	}
-	
+
 	private Traverser getVilles(Node ville){
 		TraversalDescription td=Traversal.description()
 				.breadthFirst()

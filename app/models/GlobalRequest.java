@@ -2,6 +2,7 @@ package models;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import com.hp.hpl.jena.query.Query;
@@ -12,6 +13,7 @@ import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.sparql.core.Var;
 import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.RDF;
 
@@ -266,5 +268,54 @@ public class GlobalRequest {
 			departements.add(info);
 		}
 		return departements;
+	}
+	
+	public EndPointQueries userQueriesFromEndPoint(String user_query){
+		/*
+		 * select ?abstract 
+			where 
+			{
+			?n neo:regionProp ?region .
+			?n dc:description ?abstract .
+			FILTER regex(str(?region),"Languedoc-Roussillon")
+			}
+		 */
+		ResultSet rs=null;
+		String req1=cog + NL + departement + NL + region + NL + impot + NL + 
+				geonames + NL + rdf + NL + pos + NL + skos + neo + NL + dc + NL + hbase + user_query;
+		Query query = QueryFactory.create(req1);
+		//...........................................................................................
+		//AJOUT DES MODELES A LA VOLEE
+		setRootNeoGraph();
+		m.add(neoR.buildAllModel());
+		m.add(hbaseR.buildAllModel());
+		//...........................................................................................
+		QueryExecution qexec = QueryExecutionFactory.create(query, m);
+		ArrayList<ArrayList<String>> renvoie=new ArrayList<ArrayList<String>>();
+		ArrayList<String> intermed=new ArrayList<String>();
+
+		List<Var> variables=query.getProjectVars();
+		try{
+			rs = qexec.execSelect() ;
+			while(rs.hasNext()){
+				QuerySolution sol = (QuerySolution) rs.next();
+				for (int i=0;i<variables.size();i++){
+					String rec=sol.get("?"+variables.get(i).getName()).toString();
+					intermed.add(rec);
+				}
+				renvoie.add(intermed);
+				intermed=new ArrayList<String>();
+			}
+
+		}finally{
+			qexec.close();
+		}
+		EndPointQueries epq=new EndPointQueries();
+		epq.response=renvoie;
+		epq.headOfArray=new ArrayList<String>();
+		for (int i=0;i<variables.size();i++){
+			epq.headOfArray.add(variables.get(i).getName());
+		}
+		return epq;
 	}
 }

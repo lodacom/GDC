@@ -7,6 +7,7 @@ GET     /                           controllers.Application.index()
 POST	/							controllers.Application.affichage()
 POST	/search						controllers.Application.search()
 GET 	/sparql						controllers.ControlEndPointSparql.index()
+GET 	/sparql/response			controllers.ControlEndPointSparql.query(query: String,format: String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

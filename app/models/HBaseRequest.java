@@ -207,4 +207,21 @@ public class HBaseRequest {
 	    }
 	    return m;
 	}
+	
+	public Model buildAllModel(){
+		GlobalRequest gr=new GlobalRequest(0);
+		ArrayList<String> regions=gr.regions();
+		for (String reg: regions){
+			if (regionFilter(reg)!=null){
+				m.add(regionFilter(reg));
+			}
+		}
+		ArrayList<String> departements=gr.departements();
+		for (String dep: departements){
+			if (departementFilter(dep)!=null){
+				m.add(departementFilter(dep));
+			}
+		}
+		return m;
+	}
 }
