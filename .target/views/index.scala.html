@@ -6,10 +6,37 @@
 		<div id="abstract">
 		@infoRegion.get(0).getAbstract()<br/>
 		</div>
-		<div id="rsa">
+		<!--  <div id="rsa">
 		@infoRegion.get(0).getRSA2009()<br/>
 		@infoRegion.get(0).getRSA2010()<br/>
-		</div>
+		</div>-->
+		<script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+          
+    	  $.post("/search",{ }, function(response){
+        var data = google.visualization.arrayToDataTable([
+          ['Années', 'Nombre de personnes soumises à l\'ISF', 'Nombre de personnes percevant le RSA'],
+          ['2002', response[0].isfInfo.nbre_redev , 			600],
+          ['2008', response[1].isfInfo.nbre_redev,				600],
+          ['2009',  600,      									response[0].rsa2009],
+          ['2010',  600,      									response[0].rsa2010]
+        ]);
+
+        var options = {
+                title: 'L\'écart entre la richesse et la pauvreté'
+              };
+
+              var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+              chart.draw(data, options);
+    	  });
+    	  
+        
+      }
+    </script>
+		 <div id="chart_div" style="width: 900px; height: 500px;"></div>
+		
 	}
 	<form method="post" action="">
 		<label id="region">Régions:</label>
