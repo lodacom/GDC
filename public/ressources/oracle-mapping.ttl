@@ -4,7 +4,6 @@
 @prefix am: <http://www.gdcproject.fr/gdcproject/am/> .
 @prefix cog: <http://www.gdcproject.fr/gdcproject/cog/> .
 @prefix cog_r: <http://www.gdcproject.fr/gdcproject/cog_r/> .
-@prefix commune: <http://www.gdcproject.fr/gdcproject/commune/> .
 @prefix departement: <http://www.gdcproject.fr/gdcproject/departement/> .
 @prefix impot: <http://www.gdcproject.fr/gdcproject/impot/> .
 @prefix localite: <http://www.gdcproject.fr/gdcproject/localite/> .

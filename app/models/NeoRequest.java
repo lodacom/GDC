@@ -59,6 +59,7 @@ public class NeoRequest {
 		for (Path regionPath : regionsTraverser){
 			String reg=regionPath.endNode().getProperty("entity").toString();
 			if (reg.matches(region+"@en")){
+				System.out.println("La région "+reg+" a été trouvé dans Neo4J");
 				NeoOntology.Region=m.createResource(regionPath.endNode().getProperty("entity").toString());
 				NeoOntology.Resume=m.createResource(regionPath.endNode().getProperty("abstract").toString());
 				m.add(NeoOntology.Region,NeoOntology.RegionProp,NeoOntology.Region);

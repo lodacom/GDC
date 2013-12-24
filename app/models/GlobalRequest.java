@@ -115,7 +115,7 @@ public class GlobalRequest {
 		setRootNeoGraph();
 		m.add(neoR.buildRegionsModel(region));
 		m.add(hbaseR.regionFilter(region));
-		
+		System.out.println(region);
 		String request;
 		if (region!="regions"){
 			request="SELECT ?communes (SUM(?redev) AS ?nbre_redev) (AVG(?im) AS ?impot_moyen) (AVG(?pm) AS ?patrimoine_moyen) ?long ?lat ?pop ?abstract ?rsa2009 ?rsa2010 "
@@ -208,10 +208,11 @@ public class GlobalRequest {
 		
 		setRootNeoGraph();
 		m.add(neoR.buildDepartementModel(departement));
+		m.add(hbaseR.departementFilter(departement));
 		
 		String request="";
 		if (departement!="departements"){
-			request="SELECT ?communes (SUM(?redev) AS ?nbre_redev) (AVG(?im) AS ?impot_moyen) (AVG(?pm) AS ?patrimoine_moyen) ?long ?lat ?pop ?abstract "
+			request="SELECT ?communes (SUM(?redev) AS ?nbre_redev) (AVG(?im) AS ?impot_moyen) (AVG(?pm) AS ?patrimoine_moyen) ?long ?lat ?pop ?abstract ?rsa2009 ?rsa2010 "
 					+"WHERE { "
 					+"?num_commune cog_r:Cog_R_NccEnr ?communes . "
 					+"?num_reg departement:Departement_ChefLieu ?cheflieu . "
@@ -229,11 +230,13 @@ public class GlobalRequest {
 					+ "?s pos:long ?long . "
 					//+ "?n neo:departementProp ?departement . "
 					+ "?n dc:description ?abstract . "
+					+ "?h hbase:rsa2009 ?rsa2009 . "
+					+ "?h hbase:rsa2010 ?rsa2010 . "
 					//+ "FILTER regex(str(?departement),\""+departement+"\") . "
 					+"FILTER (str(?cheflieu)=str(?code_insee)) ."
 					+ "FILTER (regex(str(?c),\".*A.ADM4\") && str(?communes)=str(?t)) "
 					+"} "
-					+ "GROUP BY ?annee ?communes ?long ?lat ?pop ?abstract ";
+					+ "GROUP BY ?annee ?communes ?long ?lat ?pop ?abstract ?rsa2009 ?rsa2010";
 		}else{
 
 		}
@@ -252,11 +255,13 @@ public class GlobalRequest {
 			nbre_redev=nbre_redev.replaceAll("\\^.*", "");
 			impot_moyen=impot_moyen.replaceAll("\\^.*", "");
 			patrimoine_moyen=patrimoine_moyen.replaceAll("\\^.*", "");
-
+			String rsa_2009=sol.get("?rsa2009").toString();
+			String rsa_2010=sol.get("?rsa2010").toString();
+			
 			ISFInformation isfInfo=new ISFInformation(departement, commune, Integer.parseInt(nbre_redev), Float.parseFloat(impot_moyen),Float.parseFloat(patrimoine_moyen));
 			GeonamesInformation gInfo=new GeonamesInformation(Integer.parseInt(pop), Double.parseDouble(longitude),Double.parseDouble(latitude));
 			NeoInformation nInfo=new NeoInformation(resume);
-			HBaseInformation hInfo=new HBaseInformation(0, 0);//TODO à changer
+			HBaseInformation hInfo=new HBaseInformation(Integer.parseInt(rsa_2009), Integer.parseInt(rsa_2010));//TODO à changer
 			info=new EntityInformation(isfInfo,gInfo,nInfo,hInfo);
 			departements.add(info);
 		}
