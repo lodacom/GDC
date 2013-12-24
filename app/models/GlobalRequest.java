@@ -113,7 +113,7 @@ public class GlobalRequest {
 		ArrayList<EntityInformation> regions=new ArrayList<EntityInformation>();
 		
 		setRootNeoGraph();
-		m.add(neoR.buildRegionsModel());
+		m.add(neoR.buildRegionsModel(region));
 		m.add(hbaseR.regionFilter(region));
 		
 		String request;
@@ -134,11 +134,11 @@ public class GlobalRequest {
 					+ "?s geonames:population ?pop . "
 					+ "?s pos:lat ?lat . "
 					+ "?s pos:long ?long . "
-					+ "?n neo:regionProp ?region . "
+					//+ "?n neo:regionProp ?region . "
 					+ "?n dc:description ?abstract . "
 					+ "?h hbase:rsa2009 ?rsa2009 . "
 					+ "?h hbase:rsa2010 ?rsa2010 . "
-					+ "FILTER regex(str(?region),\""+region+"\") . "
+					//+ "FILTER regex(str(?region),\""+region+"\") . "
 					+"FILTER (str(?cheflieu)=str(?code_insee)) ."
 					+ "FILTER (regex(str(?c),\".*A.ADM4\") && str(?communes)=str(?t)) "
 					+"} "
@@ -207,7 +207,7 @@ public class GlobalRequest {
 		ArrayList<EntityInformation> departements=new ArrayList<EntityInformation>();
 		
 		setRootNeoGraph();
-		m.add(neoR.buildDepartementModel());
+		m.add(neoR.buildDepartementModel(departement));
 		
 		String request="";
 		if (departement!="departements"){
@@ -227,9 +227,9 @@ public class GlobalRequest {
 					+ "?s geonames:population ?pop . "
 					+ "?s pos:lat ?lat . "
 					+ "?s pos:long ?long . "
-					+ "?n neo:departementProp ?departement . "
+					//+ "?n neo:departementProp ?departement . "
 					+ "?n dc:description ?abstract . "
-					+ "FILTER regex(str(?departement),\""+departement+"\") . "
+					//+ "FILTER regex(str(?departement),\""+departement+"\") . "
 					+"FILTER (str(?cheflieu)=str(?code_insee)) ."
 					+ "FILTER (regex(str(?c),\".*A.ADM4\") && str(?communes)=str(?t)) "
 					+"} "

@@ -1,6 +1,7 @@
 package models;
 
 import org.neo4j.graphdb.Direction;
+import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Path;
 import org.neo4j.graphdb.RelationshipType;
@@ -8,6 +9,8 @@ import org.neo4j.graphdb.traversal.Evaluators;
 import org.neo4j.graphdb.traversal.TraversalDescription;
 import org.neo4j.graphdb.traversal.Traverser;
 import org.neo4j.kernel.Traversal;
+import org.neo4j.rest.graphdb.RestGraphDatabase;
+
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.vocabulary.DC;
@@ -21,6 +24,7 @@ public class NeoRequest {
 	public long neoNodeId;
 	private Model m;
 	public static final String neoProp = "public/ressources/neo.properties";
+	public GraphDatabaseService gds;
 	
 	public static enum RelTypes implements RelationshipType{
 		REGION_NODE,
@@ -32,7 +36,8 @@ public class NeoRequest {
 	}
 
 	public NeoRequest(){
-		neoM=NeoManager.getInstance();
+		//neoM=NeoManager.getInstance();
+		gds = new RestGraphDatabase("http://localhost:7474/db/data");
 		m=ModelFactory.createDefaultModel();
 		m.setNsPrefix("neo",NeoOntology.getNeo());
 		m.setNsPrefix("region", NeoOntology.getRegion());
@@ -48,45 +53,57 @@ public class NeoRequest {
 		this.neoNodeId = neoNodeId;
 	}
 	
-	public Model buildRegionsModel(){
+	public Model buildRegionsModel(String region){
 		Node regionNode=getRegionNode();
 		Traverser regionsTraverser=getRegions(regionNode);
 		for (Path regionPath : regionsTraverser){
-			NeoOntology.Region=m.createResource(regionPath.endNode().getProperty("entity").toString());
-			NeoOntology.Resume=m.createResource(regionPath.endNode().getProperty("abstract").toString());
-			m.add(NeoOntology.Region,NeoOntology.RegionProp,NeoOntology.Region);//TODO propriété à changer
-			m.add(NeoOntology.Region,DC.description,NeoOntology.Resume);
+			String reg=regionPath.endNode().getProperty("entity").toString();
+			if (reg.matches(region+"@en")){
+				NeoOntology.Region=m.createResource(regionPath.endNode().getProperty("entity").toString());
+				NeoOntology.Resume=m.createResource(regionPath.endNode().getProperty("abstract").toString());
+				m.add(NeoOntology.Region,NeoOntology.RegionProp,NeoOntology.Region);
+				m.add(NeoOntology.Region,DC.description,NeoOntology.Resume);
+				break;
+			}
 		}
 		return m;
 	}
 	
-	public Model buildDepartementModel(){
+	public Model buildDepartementModel(String departement){
 		Node departementNode=getDepartementNode();
 		Traverser departementsTraverser=getDepartements(departementNode);
 
 		for (Path depPath : departementsTraverser){
-			NeoOntology.Departement=m.createResource(depPath.endNode().getProperty("entity").toString());
-			NeoOntology.Resume=m.createResource(depPath.endNode().getProperty("abstract").toString());
-			m.add(NeoOntology.Departement,NeoOntology.DepartementProp,NeoOntology.Departement);//TODO propriété à changer
-			m.add(NeoOntology.Departement,DC.description,NeoOntology.Resume);
+			String dep=depPath.endNode().getProperty("entity").toString();
+			if (dep.matches(departement+"@en")){
+				NeoOntology.Departement=m.createResource(depPath.endNode().getProperty("entity").toString());
+				NeoOntology.Resume=m.createResource(depPath.endNode().getProperty("abstract").toString());
+				m.add(NeoOntology.Departement,NeoOntology.DepartementProp,NeoOntology.Departement);
+				m.add(NeoOntology.Departement,DC.description,NeoOntology.Resume);
+				break;
+			}
 		}
 		return m;
 	}
 	
-	public Model buildVillesModel(){
+	public Model buildVillesModel(String ville){
 		Node villeNode=getVilleNode();
 		Traverser villesTraverser=getVilles(villeNode);
 		for (Path villePath : villesTraverser){
-			NeoOntology.Ville=m.createResource(villePath.endNode().getProperty("entity").toString());
-			NeoOntology.Resume=m.createResource(villePath.endNode().getProperty("abstract").toString());
-			m.add(NeoOntology.Ville,NeoOntology.VilleProp,NeoOntology.Ville);//TODO propriété à changer
-			m.add(NeoOntology.Ville,DC.description,NeoOntology.Resume);
+			String vil=villePath.endNode().getProperty("entity").toString();
+			if (vil.matches(ville+"@en")){
+				NeoOntology.Ville=m.createResource(villePath.endNode().getProperty("entity").toString());
+				NeoOntology.Resume=m.createResource(villePath.endNode().getProperty("abstract").toString());
+				m.add(NeoOntology.Ville,NeoOntology.VilleProp,NeoOntology.Ville);
+				m.add(NeoOntology.Ville,DC.description,NeoOntology.Resume);
+				break;
+			}
 		}
 		return m;
 	}
 	
 	private Node getRegionNode(){
-		return neoM.dataBase.getNodeById(neoNodeId)
+		return gds.getNodeById(neoNodeId)
 				.getSingleRelationship(RelTypes.REGION_NODE, Direction.OUTGOING)
 				.getEndNode();
 	}
@@ -100,7 +117,7 @@ public class NeoRequest {
 	}
 	
 	private Node getDepartementNode(){
-		return neoM.dataBase.getNodeById(neoNodeId)
+		return gds.getNodeById(neoNodeId)
 				.getSingleRelationship(RelTypes.DEPARTEMENT_NODE, Direction.OUTGOING)
 				.getEndNode();
 	}
@@ -114,7 +131,7 @@ public class NeoRequest {
 	}
 	
 	private Node getVilleNode(){
-		return neoM.dataBase.getNodeById(neoNodeId)
+		return gds.getNodeById(neoNodeId)
 				.getSingleRelationship(RelTypes.TOWN_NODE, Direction.OUTGOING)
 				.getEndNode(); 
 	}
