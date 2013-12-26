@@ -1,5 +1,6 @@
 li{
 	list-style-type: none;
+	padding-left:30px;
 	display: inline;
 }
 
@@ -9,7 +10,27 @@ a{
 }
 
 #abstract{
-	width: 500px;
-	height: 100px;
+	width: 600px;
 	float: right;
+	text-align: justify;
+}
+
+ul{
+	border:1px solid black;
+}
+
+#formulaire{
+	display:block;
+}
+
+#map{
+	float:left;
+}
+
+#copyright{
+	display:block;
+}
+
+footer{
+	clear:both;
 }
