@@ -51,4 +51,5 @@ projet à part.
 Pour intégrer les données de HBase, vous devez également créer un projet à part (pour les mêmes raisons).
 Copier les deux fichiers dans /public/util (HBaseInit et HBaseManager) et les deux jeux de données
 présents dans /public/ressources (Donnees_Departement_RSA.csv et Donnees_Region_RSA.csv).
+Puis exécuter la classe pricipale qui est HBaseInit (ne pas oublier de lancer le serveur HBase avant).
 </p>
